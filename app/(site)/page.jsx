@@ -1,0 +1,106 @@
+// "use client";
+// import React, { useRef, useState } from "react";
+import { Image } from "@nextui-org/image";
+import { Button } from "@nextui-org/button";
+import { Link } from "@nextui-org/react";
+import ArticleSlide from "../_component/articleSlide/ArticleSlide";
+import EventSlide from "../_component/eventSlide/EventSlide";
+// import { articles } from "./data";
+
+import { getArticlesData, getEventsData } from "@/utils/funcionApi/select";
+
+export default async function HomePage() {
+  const articlesRes = await getArticlesData(10, 0);
+  const eventsRes = await getEventsData(10, 0);
+
+  // Extract data (adjust structure if needed)
+  const articles = articlesRes.data.result;
+  const events = eventsRes.data.result;
+  // console.log(articles)
+  // console.log(events)
+  return (
+    <div className="w-full h-full">
+      <div className="w-full bg-slate-600 ">
+        <img
+          alt="home img"
+          src={events[0].image_url}
+          className="w-full h-auto object-cover"
+        />
+      </div>
+
+      <div className="w-full h-full flex flex-col items-center bg-slate-100">
+        <div className="max-w-screen-xl flex flex-col items-center py-10 ">
+          <h1 className="text-[#0083c2]">
+            TRUNG TÂM HỖ TRỢ KHỞI NGHIỆP ĐỔI MỚI SÁNG TẠO
+          </h1>
+          <h3 className="text-[#0083c2]">
+            Trường Đại học Quản lý và Công nghệ Hải Phòng
+          </h3>
+          <p className="max-w-screen-xl leading-relaxed text-center text-lg">
+            Kết nối doanh nghiệp khởi nghiệp ĐMST và tổ chức các sự kiện, đào
+            tạo đáp ứng nhu cầu phát triển. <br />
+            Hỗ trợ sinh viên qua tư vấn, hội thảo và xây dựng hệ sinh thái khởi
+            nghiệp trong trường.
+            {/* Tư vấn nghề nghiệp, đào tạo kỹ năng mềm và tổ chức thực tập, kiến
+            tập cho sinh viên. */}
+          </p>
+        </div>
+      </div>
+
+      <div className="w-full h-full flex flex-col items-center">
+        <div className="max-w-screen-xl flex flex-row py-5">
+          <div className="w-1/2 h-full flex flex-col m-5 gap-5 justify-start">
+            <h3>Giới thiệu chung</h3>
+            <p className="text-justify">
+              Trung tâm Hỗ trợ Khởi nghiệp Đổi mới Sáng tạo (SCEI) là đơn vị
+              tiên phong tại Hải Phòng, chuyên cung cấp các dịch vụ tư vấn, hỗ
+              trợ và đào tạo nhằm thúc đẩy tinh thần khởi nghiệp và phát triển
+              các dự án đổi mới sáng tạo. Với mục tiêu xây dựng một hệ sinh thái
+              khởi nghiệp mạnh mẽ, SCEI đồng hành cùng các cá nhân, doanh nghiệp
+              và cộng đồng trong việc nâng cao năng lực cạnh tranh, chuyển giao
+              công nghệ và phát triển bền vững.
+            </p>
+            <Button
+              as={Link}
+              href="/about"
+              size="md"
+              color="primary"
+              className="w-fit"
+            >
+              Xem thêm
+            </Button>
+          </div>
+          <div className="w-1/2 h-full m-5 gap-5">
+            <Image
+              width="100%"
+              alt="createImage"
+              src="/gioithieu.png"
+              className="w-full"
+            />
+          </div>
+        </div>
+      </div>
+
+      <div className="w-full h-full flex flex-col items-center">
+        <div className="max-w-screen-xl flex items-stretch py-5 gap-2">
+          <div className="w-2/3 flex flex-col my-5 mx-2 gap-5 overflow-hidden">
+            <Link href="/events " underline="hover">
+              <h3>Sự kiện</h3>
+            </Link>
+            <div className="w-full h-full">
+              <EventSlide events={events} />
+            </div>
+          </div>
+          <div className="w-1/3 flex flex-col my-5 mx-2 gap-5">
+            <Link href="/articles" underline="hover">
+              <h3>Tin tức</h3>
+            </Link>
+            <div className="w-full h-full">
+              <ArticleSlide articles={articles} />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
