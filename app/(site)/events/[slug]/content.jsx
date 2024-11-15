@@ -11,7 +11,7 @@ const Content = ({ event }) => {
   const { isOpen, onOpen, onOpenChange } = useDisclosure();
   return (
     <div className="w-full h-full bg-[#f9f9f9] min-h-screen">
-      <div className="flex flex-col items-center gap-5 max-w-screen-xl mx-auto px-5 py-5 bg-white pt-10">
+      <div className="flex flex-col items-center gap-5 max-w-screen-xl   mx-auto px-5 py-5 bg-white pt-10">
         {/* Event Title */}
         <h1 className="text-3xl font-bold">{event.title}</h1>
 

@@ -16,7 +16,7 @@ const ArticleDetail = async ({ params }) => {
   console.log(article)
 
   return (
-    <div className="w-full max-w-screen-lg mx-auto px-4 py-8">
+    <div className="w-full max-w-screen-xl mx-auto px-4 py-8">
       <h1 className="text-4xl font-bold mb-4">{article.title}</h1>
       <p className="text-sm text-gray-500 mb-6">{article.created_at}</p>
       <img

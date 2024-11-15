@@ -9,6 +9,8 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@clerk/localizations": "^3.6.4",
+    "@clerk/nextjs": "^6.3.4",
     "@nextui-org/badge": "^2.0.32",
     "@nextui-org/button": "^2.0.38",
     "@nextui-org/dropdown": "^2.1.31",

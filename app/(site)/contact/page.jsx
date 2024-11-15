@@ -59,7 +59,7 @@ export default function ContactPage() {
 
   return (
     <div className="w-full h-full bg-[#f9f9f9] min-h-screen flex">
-      <div className="flex flex-col items-start gap-5 max-w-screen-xl mx-auto px-5 py-5 bg-white">
+      <div className="flex flex-col items-start gap-5 max-w-screen-xl mx-auto px-5 py-5 bg-white w-full">
         <h1 className="text-3xl font-bold">Liên hệ</h1>
         <p className="italic text-[#0083c2]">
           Vui lòng điền thông tin vào biểu mẫu dưới đây nếu bạn cần liên hệ với
