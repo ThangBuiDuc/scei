@@ -1,6 +1,4 @@
-
 import MyNavbar from "../_hardComponent/navbar/Navbar";
-import { Toaster } from "react-hot-toast";
 
 export const metadata = {
   title: "SCEI",
@@ -12,7 +10,6 @@ export default function Layout({ children }) {
     <div className="min-h-screen w-full bg-white text-black">
       <MyNavbar />
       {children}
-      <Toaster />
     </div>
   );
 }

@@ -1,13 +1,17 @@
 import "../globals.css"; // Sử dụng CSS chung
-import { ClerkProvider } from "@clerk/nextjs";
-import { viVN } from "@clerk/localizations";
-import { NextUIProvider } from "@nextui-org/system";
-import ReactQueryProvider from "../ReactQueryProvider";
+import AdminSideBar from "../_hardComponent/adminSideBar/AdminSideBar";
+
 export const metadata = {
   title: "Admin Dashboard",
   description: "Admin area for managing articles",
 };
 
 export default function Layout({ children }) {
-  return  <>{children}</>;
+  return (
+    <div className="w-full h-screen flex">
+      <AdminSideBar />
+      <div className="w-4/5">{children}</div>
+      
+    </div>
+  );
 }
