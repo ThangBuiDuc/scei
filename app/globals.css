@@ -1,27 +1,51 @@
 @tailwind base;
-@tailwind components;
-@tailwind utilities;
 
+/* Base Styles */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --bg: white;
+  --textColor: black;
+  --softBg: #f0f0f0;
+  --softTextColor: #626262;
 }
 
 body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  @apply w-full overflow-x-hidden relative m-0 p-0;
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
+a {
+  @apply text-inherit no-underline;
 }
+
+/* Typography */
+h1 {
+  @apply text-[48px] font-bold text-black;
+}
+
+h2 {
+  @apply text-[36px] font-semibold text-black;
+}
+
+h3 {
+  @apply text-[30px] font-semibold text-black;
+}
+
+h4 {
+  @apply text-[24px] font-semibold text-black;
+}
+
+h5 {
+  @apply text-[20px] font-semibold text-black;
+}
+
+h6 {
+  @apply text-[16px] font-semibold text-black;
+}
+
+p {
+  @apply font-normal text-black;
+}
+
+@tailwind components;
+@tailwind utilities;
+
+
