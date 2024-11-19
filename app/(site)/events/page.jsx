@@ -33,7 +33,7 @@ const EventsPage = () => {
 
   return (
     <div className="w-full h-full bg-[#f9f9f9] min-h-screen">
-      <div className="max-w-screen-xl mx-auto px-4 py-5 bg-white pt-10">
+      <div className="max-w-screen-xl w-full mx-auto px-4 py-5 bg-white pt-10">
         <h3 className="gap-2 mb-6">Sự kiện</h3>
         <div className="w-full h-full flex flex-col items-center">
           {loading ? (

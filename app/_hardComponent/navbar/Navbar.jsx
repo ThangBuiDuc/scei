@@ -1,11 +1,14 @@
 "use client";
-import React from "react";
+import React, {useState} from "react";
 import Link from "next/link";
 import {
   Navbar,
   NavbarBrand,
   NavbarContent,
   NavbarItem,
+  NavbarMenuToggle,
+  NavbarMenu,
+  NavbarMenuItem,
 } from "@nextui-org/navbar";
 import {
   DropdownItem,
@@ -15,7 +18,37 @@ import {
 } from "@nextui-org/dropdown";
 import { Button } from "@nextui-org/button";
 
+const dataMenuMobile = [
+  {
+    id: 0,
+    name: " Về SCEI",
+    href: "/about",
+  },
+  {
+    id: 1,
+    name: "Tin tức",
+    href: "/articles",
+  },
+  {
+    id: 2,
+    name: " Sự kiện",
+    href: "/events",
+  },
+  {
+    id: 3,
+    name: "Liên hệ",
+    href: "/contact",
+  },
+]
+
 const MyNavbar = () => {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [activeMenu, setActiveMenu] = useState(0);
+
+  const handleClickItemMenu = (id) => {
+    setActiveMenu(id)
+    setIsMenuOpen(false)
+  }
   const icons = {
     chevron: <ChevronDown fill="currentColor" size={16} />,
     news: <NewsIcon fill="currentColor" size={30} />,
@@ -32,11 +65,20 @@ const MyNavbar = () => {
     user: <TagUser className="text-danger" fill="currentColor" size={30} />,
   };
   return (
-    <Navbar isBordered className="bg-white">
+    <Navbar
+      isBordered
+      maxWidth="xl"
+      isMenuOpen={isMenuOpen}
+      onMenuOpenChange={setIsMenuOpen}
+      className="bg-white"
+    >
       <NavbarBrand as={Link} href="/">
         <AcmeLogo />
         <p className="font-bold text-inherit">SCEI</p>
       </NavbarBrand>
+      <NavbarContent className="sm:hidden" justify="end">
+        <NavbarMenuToggle />
+      </NavbarContent>
       <NavbarContent className="hidden sm:flex gap-4" justify="end">
         <NavbarItem isActive>
           <Link href="/about" aria-current="page">
@@ -88,6 +130,17 @@ const MyNavbar = () => {
           <Link href="/contact">Liên hệ</Link>
         </NavbarItem>
       </NavbarContent>
+
+      <NavbarMenu className="bg-[#f3f2f2]/80">
+        {dataMenuMobile.map(i => (
+          <NavbarMenuItem key={i.id} >
+            <Link onClick={() => handleClickItemMenu(i.id)} href={i.href} aria-current="page" className={`${activeMenu === i.id ? "text-[#3a95ca]" : "text-[#11181c]"} text-xl`}>
+              {i.name}
+            </Link>
+          </NavbarMenuItem>
+        ))}
+      </NavbarMenu>
+
       {/* <NavbarContent justify="end">
         <NavbarItem className="hidden lg:flex">
           <Link href="#">Login</Link>

@@ -13,7 +13,7 @@ const Content = ({ event }) => {
     <div className="w-full h-full bg-[#f9f9f9] min-h-screen">
       <div className="flex flex-col items-center gap-5 max-w-screen-xl   mx-auto px-5 py-5 bg-white pt-10">
         {/* Event Title */}
-        <h1 className="text-3xl font-bold">{event.title}</h1>
+        <h1 className="text-2xl sm:text-3xl font-bold">{event.title}</h1>
 
         {/* Event Image */}
         <div className="w-full h-auto rounded-md shadow-md">
@@ -28,7 +28,7 @@ const Content = ({ event }) => {
         {/* Event Details */}
         <div className="flex flex-col items-start w-full gap-5">
           {/* Registration Deadline */}
-          <div className="flex w-full justify-around items-center">
+          <div className="flex flex-col gap-4 sm:flex-row w-full justify-around items-center">
             <div className="flex flex-col items-center gap-2">
               <p className="text-xl text-[#0083C2]">
                 <strong>Thời gian hết hạn đăng ký: </strong>
