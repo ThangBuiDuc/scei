@@ -46,8 +46,8 @@ const ArticleCard = ({ article }) => {
     >
       <CardBody className="w-full overflow-visible py-2">
         <img
-         src={article.avatar_img}
-         alt={article.slug}
+          src={article.avatar_img}
+          alt={article.slug}
           className="object-cover rounded-xl w-full"
         />
       </CardBody>

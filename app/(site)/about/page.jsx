@@ -1,10 +1,42 @@
 "use client";
-
+import {useState} from "react";
 import AvataCard from "@/app/_component/AvataCard";
 import PartnerCard from "@/app/_component/PartnerCard";
 import Link from "next/link";
+import {
+  Navbar,
+  NavbarMenu,
+  NavbarMenuItem,
+} from "@nextui-org/navbar";
 
 export default function AboutPage() {
+  const dataMenuAbout = [
+    {
+      id: "introduction",
+      name: "Giới thiệu"
+    },
+    {
+      id: "tam-nhin-su-menh",
+      name: "Tầm nhìn & Sứ mệnh"
+    },
+    {
+      id: "services",
+      name: " Dịch vụ và Chương trình"
+    },
+    {
+      id: "team",
+      name: "Đội ngũ Lãnh đạo và Chuyên gia"
+    },
+    {
+      id: "partner",
+      name: "Đối tác của SCEI"
+    },
+  ]
+  const [activeMenu, setActiveMenu] = useState(0);
+  const handleClickItemMenu = (id) => {
+    scrollToSection(id)
+    setIsMenuOpen(false)
+  }
   // Function to handle smooth scrolling with offset
   const scrollToSection = (id) => {
     const section = document.getElementById(id);
@@ -16,14 +48,14 @@ export default function AboutPage() {
   return (
     <div className="w-full h-full bg-[#f9f9f9] min-h-screen flex">
       {/* Content Layout */}
-      <div className="flex gap-5 max-w-screen-lg mx-auto px-5 py-10 bg-white pt-10">
-        <div className="flex flex-col gap-8">
+      <div className="flex gap-5 max-w-screen-lg w-full mx-auto px-5 py-10 bg-white relative text-justify">
+        <div className="flex flex-col gap-8 w-full md:w-5/6">
           <h1 className="text-3xl font-bold mb-5 text-[#0083c2]">
             Trung tâm hỗ trợ khởi nghiệp đổi mới sáng tạo
           </h1>
 
           {/* Introduction Section */}
-          <section id="introduction" className="mb-10 h-[700px]">
+          <section id="introduction" className="mb-10 min-h-[700px]">
             <h2 className="text-2xl font-semibold mb-3">
               Giới thiệu về Trung tâm
             </h2>
@@ -48,7 +80,7 @@ export default function AboutPage() {
             </div>
           </section>
 
-          <section id="tam-nhin-su-menh" className="mb-10 h-[700px]">
+          <section id="tam-nhin-su-menh" className="mb-10 min-h-[700px]">
             <h2 className="text-2xl font-semibold mb-4">Tầm nhìn & Sứ mệnh</h2>
             <div className="flex flex-col items-start gap-3 pl-5">
               <p className="text-xl">1. Tầm nhìn:</p>
@@ -71,7 +103,7 @@ export default function AboutPage() {
           </section>
 
           {/* Services Section */}
-          <section id="services" className="mb-10 h-[700px]">
+          <section id="services" className="mb-10 min-h-[700px]">
             <h2 className="text-2xl font-semibold mb-3">
               Dịch vụ và Chương trình Hỗ trợ
             </h2>
@@ -89,7 +121,7 @@ export default function AboutPage() {
           </section>
 
           {/* Team Section */}
-          <section id="team" className="mb-10 h-[700px]">
+          <section id="team" className="mb-10 min-h-[700px]">
             <h2 className="text-2xl font-semibold mb-3">
               Đội ngũ Lãnh đạo và Chuyên gia
             </h2>
@@ -109,14 +141,14 @@ export default function AboutPage() {
               </li>
               <li>Cùng các chuyên gia khác cam kết hỗ trợ đổi mới sáng tạo.</li>
             </ul>
-            <div className="flex justify-between p-8">
+            <div className="grid gap-3 md:gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 justify-items-center my-3">
               <AvataCard />
               <AvataCard />
               <AvataCard />
             </div>
           </section>
 
-          <section id="partner" className="mb-10 h-[700px]">
+          <section id="partner" className="mb-10 min-h-[700px]">
             <h2 className="text-2xl font-semibold mb-3">Đối tác của SCEI</h2>
             <p className="indent-5">
               Trung tâm Hỗ trợ Đổi mới và Sáng tạo cam kết đồng hành cùng hệ
@@ -129,8 +161,8 @@ export default function AboutPage() {
               cấp dịch vụ tư vấn chuyên sâu, hỗ trợ cộng đồng khởi nghiệp đáp
               ứng đầy đủ mọi nhu cầu đổi mới và phát triển.
             </p>
-            <p className="pt-3 indent-5 font-semibold">Các đối tác quan trọng</p>
-            <div className="flex justify-between p-8">
+            <p className="py-3 indent-5 font-semibold">Các đối tác quan trọng</p>
+            <div className="grid gap-3 md:gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 justify-items-center">
               <PartnerCard name={"Đại học quản lý và công nghệ Hải Phòng"}/>
               <PartnerCard name={"Đại học quản lý và công nghệ Hải Phòng"}/>
               <PartnerCard name={"Đại học quản lý và công nghệ Hải Phòng"}/>
@@ -140,7 +172,7 @@ export default function AboutPage() {
         </div>
 
         {/* Menu Sidebar */}
-        <div className="sticky top-28 flex flex-col items-start w-2/5 h-fit p-2 pb-10 bg-gray-100">
+        <div className="hidden sticky top-28 right-0 md:flex flex-col items-start md:w-1/6 h-fit p-2 pb-10 bg-gray-100">
           <h3 className="text-lg font-semibold mb-4">Menu</h3>
           <ul className="space-y-4">
             <li>
@@ -185,6 +217,17 @@ export default function AboutPage() {
             </li>
           </ul>
         </div>
+        <Navbar className="md:hidden">
+          <NavbarMenu className="bg-[#f3f2f2]/80">
+          {dataMenuAbout.map(i => (
+            <NavbarMenuItem key={i.id} >
+              <button onClick={() => handleClickItemMenu(i.id)} className={`${activeMenu === i.id ? "text-[#3a95ca]" : "text-[#11181c]"} text-xl`}>
+                {i.name}
+              </button>
+            </NavbarMenuItem>
+          ))}
+        </NavbarMenu>
+        </Navbar>
       </div>
     </div>
   );

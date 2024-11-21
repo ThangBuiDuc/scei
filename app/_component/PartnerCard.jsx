@@ -12,11 +12,11 @@ import {
 const PartnerCard = ({ name }) => {
   return (
     <>
-      <Card className=" h-auto w-1/4">
+      <Card className="h-[300px] w-full">
         <CardHeader className="h-10 !items-start">
-          <p className="text-tiny text-black/60 uppercase font-bold">{name}</p>
+          <p className="text-sm text-black/60 uppercase font-bold">{name}</p>
         </CardHeader>
-        <CardBody>
+        <CardBody className="mt-2">
           <Image
             removeWrapper
             alt="Card background"
