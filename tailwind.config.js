@@ -16,5 +16,5 @@ module.exports = {
       },
     },
   },
-  plugins: [nextui(),require('daisyui'),],
+  plugins: [nextui(),require('daisyui'),require('@tailwindcss/line-clamp'),],
 };

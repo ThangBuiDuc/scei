@@ -8,8 +8,8 @@ import {
   Skeleton,
 } from "@nextui-org/react";
 import Link from "next/link";
-import moment from 'moment';
-import 'moment/locale/vi';
+import moment from "moment";
+import "moment/locale/vi";
 
 function CardSkeleton() {
   return (
@@ -24,7 +24,7 @@ function CardSkeleton() {
         <Skeleton className="w-4/5 rounded-lg">
           <div className="h-3 w-4/5 rounded-lg bg-default-200"></div>
         </Skeleton>
-        <Skeleton className="w-2/5 rounded-lg">  
+        <Skeleton className="w-2/5 rounded-lg">
           <div className="h-3 w-2/5 rounded-lg bg-default-300"></div>
         </Skeleton>
       </div>
@@ -33,10 +33,10 @@ function CardSkeleton() {
 }
 
 const ArticleCard = ({ article }) => {
-  moment.locale('vi');
+  moment.locale("vi");
   if (!article) return null;
   // console.log(article)
-  const createdAt = moment(article.created_at).format('ll');
+  const createdAt = moment(article.created_at).format("ll");
   return (
     <Card
       className="py-4 m-4 w-full h-[95%]"
@@ -46,19 +46,17 @@ const ArticleCard = ({ article }) => {
     >
       <CardBody className="w-full overflow-visible py-2">
         <img
-         src={article.avatar_img}
-         alt={article.slug}
-          className="object-cover rounded-xl w-full"
+          src={article.avatar_img}
+          alt={article.slug}
+          className="object-cover h-[250px] rounded-xl w-full"
         />
       </CardBody>
-      <CardFooter className="w-full pb-0 pt-2 px-4 flex-col items-start text-left">
-        <h4 className="font-bold text-large uppercase">
-        {article.title} 
-        </h4>
-        <p className="text-base">
-          {article.description}
-        </p>
-        <small className="text-default-500">{createdAt}</small>
+      <CardFooter className="h-full w-full pb-0 pt-2 px-4 flex-col items-start text-left justify-between">
+        <h4 className="font-bold text-large uppercase">{article.title}</h4>
+        <div className="flex flex-col w-full h-fit">
+          <p className="text-base line-clamp-2">{article.description}</p>
+          <small className="text-default-500">{createdAt}</small>
+        </div>
       </CardFooter>
     </Card>
   );

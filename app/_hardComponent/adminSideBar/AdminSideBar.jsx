@@ -2,7 +2,13 @@
 
 import { createContext, useContext, useState } from "react";
 import { usePathname } from "next/navigation";
-import { FaHome, FaNewspaper, FaCalendarAlt, FaBars, FaAngleDown } from "react-icons/fa";
+import {
+  FaHome,
+  FaNewspaper,
+  FaCalendarAlt,
+  FaBars,
+  FaAngleDown,
+} from "react-icons/fa";
 import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
 
@@ -13,9 +19,9 @@ export default function Sidebar() {
 
   const menuItems = [
     { icon: <FaHome />, text: "Dashboard", address: "/admin" },
-    { 
-      icon: <FaNewspaper />, 
-      text: "Articles", 
+    {
+      icon: <FaNewspaper />,
+      text: "Articles",
       address: "/admin/news",
       subItems: [
         { text: "All Articles", address: "/admin/news" },
@@ -23,7 +29,15 @@ export default function Sidebar() {
         { text: "Manage Categories", address: "/admin/news/categories" },
       ],
     },
-    { icon: <FaCalendarAlt />, text: "Events", address: "/admin/events" },
+    {
+      icon: <FaCalendarAlt />,
+      text: "Events",
+      address: "/admin/events",
+      subItems: [
+        { text: "All Events", address: "/admin/events" },
+        { text: "Create Events", address: "/admin/events/create" },
+      ],
+    },
   ];
 
   return (
@@ -32,7 +46,7 @@ export default function Sidebar() {
         {/* Header */}
         <div className="h-[64px] p-4 pb-2 flex justify-between items-center">
           <img
-            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQab9Ct93K2IZkr3JPTF1PKt5dCjI2HEojbGA&s"
+            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQRnytJsHDAluP-VjxpuKJhDMF2BKagFxXAOw&s"
             className={`overflow-hidden h-[46px] transition-all ${
               expanded ? "w-32" : "w-0"
             }`}

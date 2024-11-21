@@ -147,7 +147,7 @@ const Content = ({ tags }) => {
             toolbar:
               "undo redo | blocks fontfamily fontsize | bold italic underline strikethrough | " +
               "link image media table | align lineheight | numlist bullist indent outdent",
-            height: 600,
+            height: 800,
           }}
           initialValue="Nhập nội dung bài viết của bạn tại đây!"
         />

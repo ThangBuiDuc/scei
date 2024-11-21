@@ -90,3 +90,29 @@ export const getEventDetail= async (slug) => {
 
   return res;
 };
+
+//Lấy danh sách loại sự kiện
+export const getEventTypes= async () => {
+  const res = await axios({
+    url: "https://lms.hasura.app/api/rest/event-types",
+    method: "get",
+    headers: {
+      "content-type": "Application/json",
+    },
+  });
+
+  return res;
+};
+
+//Lấy danh sách hình thức tổ chức sự kiện
+export const getEventFormats= async () => {
+  const res = await axios({
+    url: "https://lms.hasura.app/api/rest/event-formats",
+    method: "get",
+    headers: {
+      "content-type": "Application/json",
+    },
+  });
+
+  return res;
+};
