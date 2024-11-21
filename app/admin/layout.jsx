@@ -1,5 +1,5 @@
 import "../globals.css"; // Sử dụng CSS chung
-import AdminSideBar from "../_hardComponent/adminSideBar/AdminSideBar";
+import Sidebar from "../_hardComponent/adminSideBar/AdminSideBar";
 
 export const metadata = {
   title: "Admin Dashboard",
@@ -8,10 +8,12 @@ export const metadata = {
 
 export default function Layout({ children }) {
   return (
-    <div className="w-full h-screen flex">
-      <AdminSideBar />
-      <div className="w-4/5">{children}</div>
-      
+    <div className="flex w-full h-screen">
+      <Sidebar />
+      <div className="flex flex-col h-full w-full flex-1">
+        <header className="h-16 bg-white shadow-sm flex-shrink-0"></header>
+        <main className="p-6 flex-1 bg-gray-50 overflow-y-hidden">{children}</main>
+      </div>
     </div>
   );
 }
