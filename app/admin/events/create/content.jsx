@@ -10,16 +10,22 @@ import {
   DateInput,
 } from "@nextui-org/react";
 import { now, getLocalTimeZone } from "@internationalized/date";
+import { createEvent } from "@/utils/funcionApi/create";
+import toast from "react-hot-toast";
+import { useMutation } from "@tanstack/react-query";
 
 const formatDateToISOString = (dateObj) => {
   const { year, month, day, hour, minute, second, millisecond } = dateObj;
 
   const pad = (num) => String(num).padStart(2, "0");
 
-  return `${year}-${pad(month)}-${pad(day)}T${pad(hour)}:${pad(minute)}:${pad(second)}.${millisecond}Z`;
+  return `${year}-${pad(month)}-${pad(day)}T${pad(hour)}:${pad(minute)}:${pad(
+    second
+  )}.${millisecond}Z`;
 };
 
-const Content = ({ types = { result: [] }, formats = { result: [] } }) => {
+const Content = ({ types, formats }) => {
+  const [mutating, setMutating] = useState(false);
   const [formData, setFormData] = useState({
     title: "",
     image_url: "",
@@ -40,25 +46,56 @@ const Content = ({ types = { result: [] }, formats = { result: [] } }) => {
     }));
   };
 
+  const mutation = useMutation({
+    mutationFn: ({ objects }) => createEvent(objects),
+    onSuccess: () => {
+      setMutating(false);
+      setFormData({
+        title: "",
+        image_url: "",
+        description: "",
+        start_time: now(getLocalTimeZone()),
+        end_time: now(getLocalTimeZone()),
+        registration_time: now(getLocalTimeZone()),
+        location: "",
+        docs_url: "",
+        event_type_id: "",
+        event_format_id: "",
+      });
+      toast.success("Tạo sự kiện thành công", {
+        duration: 4000,
+        position: "top-center",
+      });
+    },
+    onError: () => {
+      setMutating(false);
+      toast.error("Có lỗi xảy ra. Vui lòng thử lại.");
+    },
+  });
+
   const handleSubmit = () => {
-    const formattedData = {
+    const objects = {
       ...formData,
       start_time: formatDateToISOString(formData.start_time),
       end_time: formatDateToISOString(formData.end_time),
       registration_time: formatDateToISOString(formData.registration_time),
     };
 
-    if (new Date(formattedData.end_time) <= new Date(formattedData.start_time)) {
+    if (
+      new Date(objects.end_time) <= new Date(objects.start_time)
+    ) {
       alert("Thời gian kết thúc phải sau thời gian bắt đầu.");
       return;
     }
 
-    if (new Date(formattedData.registration_time) < new Date()) {
+    if (new Date(objects.registration_time) < new Date()) {
       alert("Hạn đăng ký không thể là thời gian trong quá khứ.");
       return;
     }
 
-    console.log("Dữ liệu sự kiện (validated & formatted):", formattedData);
+    setMutating(true);
+    mutation.mutate({ objects });
+    console.log("Dữ liệu sự kiện (validated & formatted):", objects);
   };
 
   return (
