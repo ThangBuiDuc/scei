@@ -29,11 +29,11 @@ export default async function HomePage() {
       </div>
 
       <div className="w-full h-full flex flex-col items-center bg-slate-100">
-        <div className="max-w-screen-xl flex flex-col items-center py-10 ">
-          <h1 className="text-[#0083c2]">
+        <div className="max-w-screen-xl flex flex-col items-center py-10 px-4 md:px-0 gap-y-2 ">
+          <h1 className="text-[#0083c2] font-bold text-3xl md:text-5xl text-center">
             TRUNG TÂM HỖ TRỢ KHỞI NGHIỆP ĐỔI MỚI SÁNG TẠO
           </h1>
-          <h3 className="text-[#0083c2]">
+          <h3 className="text-[#0083c2] text-2xl md:text-4xl font-semibold text-center">
             Trường Đại học Quản lý và Công nghệ Hải Phòng
           </h3>
           <p className="max-w-screen-xl leading-relaxed text-center text-lg">
@@ -48,9 +48,9 @@ export default async function HomePage() {
       </div>
 
       <div className="w-full h-full flex flex-col items-center">
-        <div className="max-w-screen-xl flex flex-row py-5">
-          <div className="w-1/2 h-full flex flex-col m-5 gap-5 justify-start">
-            <h3>Giới thiệu chung</h3>
+        <div className="max-w-screen-xl flex flex-col lg:flex-row py-5">
+          <div className="w-full lg:w-1/2 h-full flex flex-col lg:m-5 px-4 lg:px-0 gap-5 justify-start">
+            <h3 className="text-center">Giới thiệu chung</h3>
             <p className="text-justify">
               Trung tâm Hỗ trợ Khởi nghiệp Đổi mới Sáng tạo (SCEI) là đơn vị
               tiên phong tại Hải Phòng, chuyên cung cấp các dịch vụ tư vấn, hỗ
@@ -70,32 +70,32 @@ export default async function HomePage() {
               Xem thêm
             </Button>
           </div>
-          <div className="w-1/2 h-full m-5 gap-5">
+          <div className="w-full lg:w-1/2 h-full lg:m-5 gap-5 p-2 lg:p-0">
             <Image
               width="100%"
               alt="createImage"
               src="/gioithieu.png"
-              className="w-full"
+              className="w-full m-auto"
             />
           </div>
         </div>
       </div>
 
       <div className="w-full h-full flex flex-col items-center">
-        <div className="max-w-screen-xl flex items-stretch py-5 gap-2">
-          <div className="w-2/3 flex flex-col my-5 mx-2 gap-5 overflow-hidden">
+        <div className="max-w-screen-xl w-full flex flex-col lg:flex-row items-stretch py-5 gap-2">
+          <div className="w-full lg:w-2/3 flex flex-col overflow-hidden">
             <Link href="/events " underline="hover">
               <h3>Sự kiện</h3>
             </Link>
-            <div className="w-full h-full">
+            <div className="w-full h-full pt-5">
               <EventSlide events={events} />
             </div>
           </div>
-          <div className="w-1/3 flex flex-col my-5 mx-2 gap-5">
+          <div className="w-full lg:w-1/3 flex flex-col">
             <Link href="/articles" underline="hover">
               <h3>Tin tức</h3>
             </Link>
-            <div className="w-full h-full">
+            <div className="w-full h-full pt-5">
               <ArticleSlide articles={articles} />
             </div>
           </div>

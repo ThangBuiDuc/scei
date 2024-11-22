@@ -65,8 +65,8 @@ export default function ContactPage() {
           Vui lòng điền thông tin vào biểu mẫu dưới đây nếu bạn cần liên hệ với
           Chúng tôi!
         </p>
-        <div className="flex w-full gap-5 ">
-          <div className="w-1/2 items-start p-3">
+        <div className="flex flex-col sm:flex-row w-full gap-5 ">
+          <div className="w-full sm:w-1/2 items-start p-3">
             <form>
               <div className="space-y-5">
                 <Input
@@ -129,7 +129,7 @@ export default function ContactPage() {
             </form>
           </div>
 
-          <div className="w-1/2 flex flex-col p-3">
+          <div className="w-full sm:w-1/2 flex flex-col p-3">
             {/* Phần thông tin liên hệ */}
             <div className="w-full flex flex-col space-y-3">
               <div className="flex items-center text-gray-600 font-semibold gap-5">

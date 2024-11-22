@@ -60,10 +60,10 @@ const Page = () => {
 
   return (
     <div className="w-full h-full bg-[#f9f9f9]">
-      <div className="max-w-screen-xl mx-auto px-4 py-5 bg-white pt-10">
+      <div className="max-w-screen-xl w-full mx-auto px-4 py-5 bg-white pt-10">
         <h3 className="gap-2 mb-6">Tin tức</h3>
         {/* Bộ lọc tag */}
-        <div className="w-full flex flex-wrap gap-2 p-5">
+        <div className="w-full flex flex-wrap gap-2 md:p-5 mb-2">
           {tags.map((tag) => (
             <button
               key={tag.id}
@@ -80,7 +80,7 @@ const Page = () => {
         </div>
 
         {/* Hiển thị bài viết */}
-        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3 p-5 justify-items-center">
+        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3 md:p-5 justify-items-center">
           {articles.map((article) => (
             <ArticleCard key={article.id} article={article} />
           ))}

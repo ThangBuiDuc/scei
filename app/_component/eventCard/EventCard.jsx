@@ -25,9 +25,9 @@ const EventCard = ({ event,isVisible }) => {
 
   return (
     <>
-      <Card className="py-4 m-4 w-full h-[95%]">
-        <CardHeader>
-          <div className="w-2/5 h-full rounded-r-lg overflow-hidden">
+      <Card className="py-4 md:m-4 w-full h-[95%]">
+        <CardHeader className="flex md:flex-row flex-col items-start">
+          <div className="md:w-2/5 w-full h-full rounded-r-lg overflow-hidden">
             <div className="flex items-center space-x-2 bg-gray-100 text-gray-800 rounded-md p-2 justify-between">
               <div className="text-center px-2">
                 <span className="block text-base font-bold">
@@ -49,22 +49,22 @@ const EventCard = ({ event,isVisible }) => {
               </div>
             </div>
           </div>
-          <div className="w-3/5 h-full flex flex-col items-start px-8 py-2 flex-grow">
-            <span className="text-md bg-green-100 text-green-800 font-medium me-2 px-2.5 rounded-full dark:bg-green-900 dark:text-green-300">
+          <div className="md:w-3/5 w-full h-full flex md:justify-start justify-center  items-center sm:px-8 px-4 py-2">
+            <span className="text-md bg-green-100 text-green-800 font-medium me-2 px-2.5 rounded-full ">
               {event.event_type.name}
             </span>
           </div>
         </CardHeader>
-        <CardBody className="flex flex-row items-start h-full">
-          <div className="w-2/5 h-full rounded-r-lg overflow-hidden">
+        <CardBody className="flex md:flex-row md:gap-y-0 gap-y-6 flex-col items-start h-full">
+          <div className="md:w-2/5 h-full rounded-r-lg overflow-hidden">
             <img
               className="object-cover rounded-xl w-full"
               src={event.image_url}
               alt="Event image"
             />
           </div>
-          <div className="w-3/5 h-full flex flex-col items-start px-4 ">
-            <div className="w-full flex flex-col items-start px-4 pb-2 flex-grow gap-3">
+          <div className="md:w-3/5 w-full h-full flex flex-col items-start justify-between md:px-4">
+            <div className="w-full flex flex-col items-start px-4 pb-2 gap-3">
               <h4 className="font-bold text-large uppercase">{event.title}</h4>
               <p className="text-base">{event.description}</p>
             </div>
@@ -86,7 +86,7 @@ const EventCard = ({ event,isVisible }) => {
             </div>
           </div>
         </CardBody>
-        <CardFooter></CardFooter>
+        {/* <CardFooter></CardFooter> */}
       </Card>
       {/* Use EventRegistrationModal component */}
       <EventRegistrationModal

@@ -39,7 +39,7 @@ const ArticleCard = ({ article }) => {
   const createdAt = moment(article.created_at).format("ll");
   return (
     <Card
-      className="py-4 m-4 w-full h-[95%]"
+      className="py-4 md:m-4 w-full h-[95%]"
       as={Link}
       key={article.id}
       href={`/articles/${article.slug}`}
@@ -48,7 +48,7 @@ const ArticleCard = ({ article }) => {
         <img
           src={article.avatar_img}
           alt={article.slug}
-          className="object-cover h-[250px] rounded-xl w-full"
+          className="object-cover h-[200px] rounded-xl w-full"
         />
       </CardBody>
       <CardFooter className="h-full w-full pb-0 pt-2 px-4 flex-col items-start text-left justify-between">
