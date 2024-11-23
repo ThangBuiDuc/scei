@@ -48,8 +48,8 @@ export default function AboutPage() {
   return (
     <div className="w-full h-full bg-[#f9f9f9] min-h-screen flex">
       {/* Content Layout */}
-      <div className="flex gap-5 max-w-screen-lg w-full mx-auto px-5 py-10 bg-white relative text-justify">
-        <div className="flex flex-col gap-8 w-full md:w-5/6">
+      <div className="flex gap-5 max-w-screen-xl w-full mx-auto px-5 py-10 bg-white relative text-justify">
+        <div className="flex flex-col gap-8 w-full md:w-5/6 pr-5">
           <h1 className="text-3xl font-bold mb-5 text-[#0083c2]">
             Trung tâm hỗ trợ khởi nghiệp đổi mới sáng tạo
           </h1>
