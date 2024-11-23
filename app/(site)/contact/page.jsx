@@ -155,9 +155,9 @@ export default function ContactPage() {
         <div className="w-full">
           <Image
             removeWrapper
-            alt="contact-img"
+            alt="contactimg"
             className="w-full h-auto object-cover"
-            src="https://lh7-us.googleusercontent.com/4OR55rQHQCXD6Hc6Sjvp2XUV0S9nk777Mnh_xSpJV3aq7Nhyqtz204XjR1hdDtOfFs-mSiZNPa30byVo1Bu9cjFPPeWZIpR-faWQsrwiu-bUHk2SuMDuH4TA7K6PvkfJ4ntiLUgNCaT0KwxUHdlwpLI"
+            src="https://theme.hstatic.net/1000215755/1000897079/14/slider-1.png?v=306"
           />
         </div>
       </div>

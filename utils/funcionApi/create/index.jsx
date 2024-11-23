@@ -35,3 +35,15 @@ export const createNews = async (objects) => {
   });
 };
 
+// Tạo bài viết
+export const createEvent = async (objects) => {
+  return await axios({
+    url: "https://lms.hasura.app/api/rest/insert-events",
+    method: "post",
+    data: { objects },
+    headers: {
+      "content-type": "Application/json",
+    },
+  });
+};
+

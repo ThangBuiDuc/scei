@@ -1,6 +1,6 @@
 "use client";
 
-import { createContext, useContext, useState } from "react";
+import { createContext, useContext, useState, useEffect } from "react";
 import { usePathname } from "next/navigation";
 import {
   FaHome,
@@ -11,6 +11,12 @@ import {
 } from "react-icons/fa";
 import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
+import {
+  Popover,
+  PopoverTrigger,
+  PopoverContent,
+  Button,
+} from "@nextui-org/react";
 
 const SidebarContext = createContext();
 
@@ -24,7 +30,7 @@ export default function Sidebar() {
       text: "Articles",
       address: "/admin/news",
       subItems: [
-        { text: "All Articles", address: "/admin/news" },
+        { text: "All Articles", address: "/admin/news/update" },
         { text: "Create Article", address: "/admin/news/create" },
         { text: "Manage Categories", address: "/admin/news/categories" },
       ],
@@ -78,7 +84,7 @@ export default function Sidebar() {
         {/* Footer */}
         <div className="border-t flex p-3">
           <img
-            src="https://ui-avatars.com/api/?background=c7d2fe&color=3730a3&bold=true"
+            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSwLFUO9V-7LCC_tU1c3YjPx7FWH1335ukY0A&s"
             alt="Avatar"
             className="w-10 h-10 rounded-md"
           />
@@ -104,11 +110,14 @@ function SidebarItem({ icon, text, address, subItems }) {
   const pathname = usePathname();
   const isActive = address && pathname === address;
   const [isOpen, setIsOpen] = useState(false);
+  useEffect(() => {
+    if (!expanded) setIsOpen(false);
+  }, [expanded]);
 
   return (
     <>
       {/* Parent Item */}
-      <div
+      {/* <div
         className={`relative flex items-center py-2 px-3 my-1 font-medium rounded-md cursor-pointer transition-colors group ${
           isActive
             ? "bg-gradient-to-tr from-indigo-200 to-indigo-100 text-indigo-800"
@@ -124,18 +133,19 @@ function SidebarItem({ icon, text, address, subItems }) {
         >
           {text}
         </span>
-        {subItems && (
-          <FaAngleDown
-            className={`ml-auto transition-transform ${
-              isOpen ? "rotate-180" : "rotate-0"
-            }`}
-          />
-        )}
-      </div>
+        {subItems &&
+          expanded && ( // Show arrow only when sidebar is expanded
+            <FaAngleDown
+              className={`ml-auto transition-transform ${
+                isOpen ? "rotate-180" : "rotate-0"
+              }`}
+            />
+          )}
+      </div> */}
 
       {/* Sub-Items with Animation */}
-      <AnimatePresence>
-        {isOpen && subItems && (
+      {/* <AnimatePresence>
+        {expanded && isOpen && subItems && (
           <motion.ul
             className="pl-8"
             initial={{ height: 0, opacity: 0 }}
@@ -144,7 +154,7 @@ function SidebarItem({ icon, text, address, subItems }) {
             transition={{ duration: 0.3, ease: "easeInOut" }}
           >
             {subItems.map((subItem, index) => {
-              const isSubItemActive = pathname === subItem.address; // Check active for sub-items
+              const isSubItemActive = pathname === subItem.address;
               return (
                 <Link href={subItem.address} key={index}>
                   <li
@@ -161,7 +171,100 @@ function SidebarItem({ icon, text, address, subItems }) {
             })}
           </motion.ul>
         )}
-      </AnimatePresence>
+      </AnimatePresence> */}
+
+      {/* popup */}
+      {!expanded && !isOpen && subItems ? (
+        <Popover placement="right-start" >
+          <PopoverTrigger>
+            <div
+              className={`relative flex items-center py-2 px-3 my-1 font-medium rounded-md cursor-pointer transition-colors group ${
+                isActive
+                  ? "bg-gradient-to-tr from-indigo-200 to-indigo-100 text-indigo-800"
+                  : "hover:bg-indigo-50 text-gray-600"
+              }`}
+            >
+              {icon}
+            </div>
+          </PopoverTrigger>
+          <PopoverContent>
+            {subItems.map((subItem, index) => {
+              const isSubItemActive = pathname === subItem.address;
+              return (
+                <Link href={subItem.address} key={index} className="w-full">
+                  <div
+                    className={`w-full py-2 px-3 my-1 font-medium rounded-md cursor-pointer text-gray-600 hover:bg-indigo-50 ${
+                      isSubItemActive
+                        ? "bg-gradient-to-tr from-indigo-200 to-indigo-100 text-indigo-800"
+                        : ""
+                    }`}
+                  >
+                    {subItem.text}
+                  </div>
+                </Link>
+              );
+            })}
+          </PopoverContent>
+        </Popover>
+      ) : (
+        <>
+          <div
+            className={`relative flex items-center py-2 px-3 my-1 font-medium rounded-md cursor-pointer transition-colors group ${
+              isActive
+                ? "bg-gradient-to-tr from-indigo-200 to-indigo-100 text-indigo-800"
+                : "hover:bg-indigo-50 text-gray-600"
+            }`}
+            onClick={() => setIsOpen((prev) => !prev)}
+          >
+            {icon}
+            <span
+              className={`overflow-hidden transition-all ${
+                expanded ? "w-52 ml-3" : "w-0"
+              }`}
+            >
+              {text}
+            </span>
+            {subItems &&
+              expanded && ( // Show arrow only when sidebar is expanded
+                <FaAngleDown
+                  className={`ml-auto transition-transform ${
+                    isOpen ? "rotate-180" : "rotate-0"
+                  }`}
+                />
+              )}
+          </div>
+
+          {/* Sub-Items with Animation */}
+          <AnimatePresence>
+            {expanded && isOpen && subItems && (
+              <motion.ul
+                className="pl-8"
+                initial={{ height: 0, opacity: 0 }}
+                animate={{ height: "auto", opacity: 1 }}
+                exit={{ height: 0, opacity: 0 }}
+                transition={{ duration: 0.3, ease: "easeInOut" }}
+              >
+                {subItems.map((subItem, index) => {
+                  const isSubItemActive = pathname === subItem.address;
+                  return (
+                    <Link href={subItem.address} key={index}>
+                      <li
+                        className={`py-2 px-3 my-1 font-medium rounded-md cursor-pointer text-gray-600 hover:bg-indigo-50 ${
+                          isSubItemActive
+                            ? "bg-gradient-to-tr from-indigo-200 to-indigo-100 text-indigo-800"
+                            : ""
+                        }`}
+                      >
+                        {subItem.text}
+                      </li>
+                    </Link>
+                  );
+                })}
+              </motion.ul>
+            )}
+          </AnimatePresence>
+        </>
+      )}
     </>
   );
 }

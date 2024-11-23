@@ -42,7 +42,6 @@ const Content = ({ tags }) => {
         duration: 4000,
         position: "top-center",
       });
-      onClose();
     },
     onError: () => {
       setMutating(false);
