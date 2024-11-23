@@ -85,7 +85,7 @@ export default async function HomePage() {
         <div className="max-w-screen-xl w-full flex flex-col lg:flex-row items-stretch py-5 gap-2">
           <div className="w-full lg:w-2/3 flex flex-col overflow-hidden">
             <Link href="/events " underline="hover">
-              <h3>Sự kiện</h3>
+              <h3 className="px-4">Sự kiện</h3>
             </Link>
             <div className="w-full h-full pt-5">
               <EventSlide events={events} />
@@ -93,7 +93,7 @@ export default async function HomePage() {
           </div>
           <div className="w-full lg:w-1/3 flex flex-col">
             <Link href="/articles" underline="hover">
-              <h3>Tin tức</h3>
+              <h3 className="px-4">Tin tức</h3>
             </Link>
             <div className="w-full h-full pt-5">
               <ArticleSlide articles={articles} />

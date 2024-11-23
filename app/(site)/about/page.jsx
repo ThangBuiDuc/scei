@@ -6,6 +6,7 @@ import Link from "next/link";
 import {
   Navbar,
   NavbarMenu,
+  NavbarMenuToggle,
   NavbarMenuItem,
 } from "@nextui-org/navbar";
 
@@ -32,6 +33,8 @@ export default function AboutPage() {
       name: "Đối tác của SCEI"
     },
   ]
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
   const [activeMenu, setActiveMenu] = useState(0);
   const handleClickItemMenu = (id) => {
     scrollToSection(id)
@@ -50,12 +53,12 @@ export default function AboutPage() {
       {/* Content Layout */}
       <div className="flex gap-5 max-w-screen-lg w-full mx-auto px-5 py-10 bg-white relative text-justify">
         <div className="flex flex-col gap-8 w-full md:w-5/6">
-          <h1 className="text-3xl font-bold mb-5 text-[#0083c2]">
+          <h1 className="text-3xl text-left font-bold mb-5 text-[#0083c2]">
             Trung tâm hỗ trợ khởi nghiệp đổi mới sáng tạo
           </h1>
 
           {/* Introduction Section */}
-          <section id="introduction" className="mb-10 min-h-[700px]">
+          <section id="introduction" className="mb-10 min-h-[400px]">
             <h2 className="text-2xl font-semibold mb-3">
               Giới thiệu về Trung tâm
             </h2>
@@ -80,7 +83,7 @@ export default function AboutPage() {
             </div>
           </section>
 
-          <section id="tam-nhin-su-menh" className="mb-10 min-h-[700px]">
+          <section id="tam-nhin-su-menh" className="mb-10 min-h-[400px]">
             <h2 className="text-2xl font-semibold mb-4">Tầm nhìn & Sứ mệnh</h2>
             <div className="flex flex-col items-start gap-3 pl-5">
               <p className="text-xl">1. Tầm nhìn:</p>
@@ -103,7 +106,7 @@ export default function AboutPage() {
           </section>
 
           {/* Services Section */}
-          <section id="services" className="mb-10 min-h-[700px]">
+          <section id="services" className="mb-10 min-h-[400px]">
             <h2 className="text-2xl font-semibold mb-3">
               Dịch vụ và Chương trình Hỗ trợ
             </h2>
@@ -121,7 +124,7 @@ export default function AboutPage() {
           </section>
 
           {/* Team Section */}
-          <section id="team" className="mb-10 min-h-[700px]">
+          <section id="team" className="mb-10 min-h-[400px]">
             <h2 className="text-2xl font-semibold mb-3">
               Đội ngũ Lãnh đạo và Chuyên gia
             </h2>
@@ -148,7 +151,7 @@ export default function AboutPage() {
             </div>
           </section>
 
-          <section id="partner" className="mb-10 min-h-[700px]">
+          <section id="partner" className="mb-10 min-h-[400px]">
             <h2 className="text-2xl font-semibold mb-3">Đối tác của SCEI</h2>
             <p className="indent-5">
               Trung tâm Hỗ trợ Đổi mới và Sáng tạo cam kết đồng hành cùng hệ
@@ -217,8 +220,18 @@ export default function AboutPage() {
             </li>
           </ul>
         </div>
-        <Navbar className="md:hidden">
-          <NavbarMenu className="bg-[#f3f2f2]/80">
+        {/* <Navbar
+          isBordered
+          maxWidth="xl"
+          isMenuOpen={isMenuOpen}
+          onMenuOpenChange={setIsMenuOpen}
+          className="md:hidden w-[30px] fixed top-10 right-0 bg-transparent"
+        >
+        <NavbarMenuToggle
+          aria-label={isMenuOpen ? "Close menu" : "Open menu"}
+          className="md:hidden text-right"
+        />
+          <NavbarMenu className="bg-[#f3f2f2]">
           {dataMenuAbout.map(i => (
             <NavbarMenuItem key={i.id} >
               <button onClick={() => handleClickItemMenu(i.id)} className={`${activeMenu === i.id ? "text-[#3a95ca]" : "text-[#11181c]"} text-xl`}>
@@ -227,7 +240,7 @@ export default function AboutPage() {
             </NavbarMenuItem>
           ))}
         </NavbarMenu>
-        </Navbar>
+        </Navbar> */}
       </div>
     </div>
   );
