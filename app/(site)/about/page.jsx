@@ -1,7 +1,9 @@
 "use client";
 import {useState} from "react";
+import Img1 from "@/app/_component/img/anh1.jpg";
 import AvataCard from "@/app/_component/AvataCard";
 import PartnerCard from "@/app/_component/PartnerCard";
+import {Image} from "@nextui-org/react";
 import Link from "next/link";
 import {
   Navbar,
@@ -81,6 +83,14 @@ export default function AboutPage() {
                 thuế riêng và có hạch toán độc lập.
               </p>
             </div>
+            <Image
+              className="object-cover mt-5"
+              width="100%"
+              height={300}
+              alt="anh 1"
+              // src={Img1}
+              src="https://app.requestly.io/delay/5000/https://nextui.org/images/hero-card-complete.jpeg"
+            />
           </section>
 
           <section id="tam-nhin-su-menh" className="mb-10 min-h-[400px]">
