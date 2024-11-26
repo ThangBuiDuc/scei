@@ -1,9 +1,11 @@
 "use client";
-import { useState } from "react";
+import {useState} from "react";
+
 import AvataCard from "@/app/_component/AvataCard";
 import PartnerCard from "@/app/_component/PartnerCard";
+import {Image} from "@nextui-org/react";
 import Link from "next/link";
-import { Image } from "@nextui-org/image";
+// import { Image } from "@nextui-org/image";
 import NextImage from "next/image";
 export default function AboutPage() {
   const dataMenuAbout = [
@@ -35,8 +37,9 @@ export default function AboutPage() {
     },
   ]
 
-  const [activeMenu, setActiveMenu] = useState(null);
+  // const [activeMenu, setActiveMenu] = useState(null);
 
+  const [activeMenu, setActiveMenu] = useState(0);
   const handleClickItemMenu = (id) => {
     scrollToSection(id);
     setActiveMenu(id);
@@ -55,19 +58,14 @@ export default function AboutPage() {
       {/* Content Layout */}
       <div className="flex gap-5 max-w-screen-xl w-full mx-auto px-5 py-10 bg-white shadow-lg rounded-lg relative text-justify">
         {/* Left Content */}
-        <div className="flex flex-col gap-8 w-full md:w-5/6 pr-5">
-          <h1 className="text-4xl font-extrabold mb-5 text-[#007bb5] leading-tight">
+        <div className="flex flex-col gap-8 w-full md:w-5/6">
+          <h1 className="text-4xl font-extrabold mb-5 text-[#007bb5] text-center leading-tight">
             Trung tâm hỗ trợ khởi nghiệp đổi mới sáng tạo
           </h1>
 
           {/* Introduction Section */}
-          <section
-            id="introduction"
-            className="mb-10 min-h-[700px] border-b pb-6"
-          >
-            <h2 className="text-3xl font-semibold mb-4 text-gray-800">
-              Giới thiệu về Trung tâm
-            </h2>
+          <section id="introduction" className="min-h-[500px] pb-3 border-b">
+            <h2 className="text-center sm:text-left text-3xl font-semibold mb-4 text-gray-800">Giới thiệu về Trung tâm</h2>
             <div className="pl-6 text-gray-700 text-lg leading-relaxed">
               <p>
                 <span className="font-bold">1.</span> Tên tiếng Việt: Trung tâm
@@ -91,17 +89,20 @@ export default function AboutPage() {
                 <li>Hoạt động với cơ chế tài chính độc lập</li>
               </ul>
             </div>
-            <div></div>
+            <div>
+              
+            </div>
+            <Image
+              className="object-cover h-[300px] md:h-[400px] w-full mt-5"
+              width="100%"
+              alt="anh 1"
+              src="/anh1.jpg"
+            />
           </section>
 
           {/* Vision Section */}
-          <section
-            id="tam-nhin-su-menh"
-            className="mb-10 min-h-[700px] border-b pb-6"
-          >
-            <h2 className="text-3xl font-semibold mb-4 text-gray-800">
-              Tầm nhìn & Sứ mệnh
-            </h2>
+          <section id="tam-nhin-su-menh" className="min-h-[500px] pb-3 border-b">
+            <h2 className="text-center sm:text-left text-3xl font-semibold mb-4 text-gray-800">Tầm nhìn & Sứ mệnh</h2>
             <div className="text-gray-700 text-lg leading-relaxed">
               <p className="mb-4">
                 <span className="font-bold">1. Tầm nhìn:</span> Trở thành Trung
@@ -116,17 +117,16 @@ export default function AboutPage() {
               </p>
             </div>
             <Image
-              as={NextImage}
-              width={300}
-              height={200}
-              src="/tam-nhin.png"
-              alt="NextUI hero Image"
+              className="object-cover h-[300px] md:h-[400px] w-full mt-5"
+              width="100%"
+              alt="anh 1"
+              src="/anh1.jpg"
             />
           </section>
 
           {/* Services Section */}
-          <section id="services" className="mb-10 min-h-[700px] border-b pb-6">
-            <h2 className="text-3xl font-semibold mb-3 text-gray-800">
+          <section id="services" className="mb-10 min-h-[500px] pb-3 border-b">
+            <h2 className="text-center sm:text-left text-3xl font-semibold mb-3 text-gray-800">
               Dịch vụ và Chương trình Hỗ trợ
             </h2>
             <div className="text-gray-700 text-lg leading-relaxed">
@@ -144,11 +144,17 @@ export default function AboutPage() {
                 như hackathon và hội thảo theo ngành.
               </p>
             </div>
+            <Image
+              className="object-cover h-[300px] md:h-[400px] w-full mt-5"
+              width="100%"
+              alt="anh 1"
+              src="/anh1.jpg"
+            />
           </section>
 
           {/* Team Section */}
-          <section id="team" className="mb-10 min-h-[700px] border-b pb-6">
-            <h2 className="text-3xl font-semibold mb-3 text-gray-800">
+          <section id="team" className="mb-10 min-h-[500px] pb-3 border-b">
+            <h2 className="text-center sm:text-left text-3xl font-semibold mb-3 text-gray-800">
               Đội ngũ Lãnh đạo và Chuyên gia
             </h2>
             <div className="text-gray-700 text-lg leading-relaxed">
@@ -157,6 +163,7 @@ export default function AboutPage() {
                 chuyên gia của chúng tôi có nhiều kinh nghiệm trong lĩnh vực của
                 họ, góp phần thúc đẩy sứ mệnh của trung tâm.
               </p>
+    
             </div>
             <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3 mt-5">
               {dataTeam.map((item,index) => (
@@ -166,10 +173,8 @@ export default function AboutPage() {
           </section>
 
           {/* Partner Section */}
-          <section id="partner" className="mb-10 min-h-[700px]">
-            <h2 className="text-3xl font-semibold mb-3 text-gray-800">
-              Đối tác của SCEI
-            </h2>
+          <section id="partner" className="min-h-[500px] pb-3">
+            <h2 className="text-center sm:text-left text-3xl font-semibold mb-3 text-gray-800">Đối tác của SCEI</h2>
             <div className="text-gray-700 text-lg leading-relaxed mb-5">
               <p>
                 Trung tâm Hỗ trợ Đổi mới và Sáng tạo cam kết đồng hành cùng hệ
