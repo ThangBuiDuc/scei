@@ -3,8 +3,8 @@ import { useState } from "react";
 import AvataCard from "@/app/_component/AvataCard";
 import PartnerCard from "@/app/_component/PartnerCard";
 import Link from "next/link";
-import { Navbar, NavbarMenu, NavbarMenuItem } from "@nextui-org/navbar";
-
+import { Image } from "@nextui-org/image";
+import NextImage from "next/image";
 export default function AboutPage() {
   const dataMenuAbout = [
     { id: "introduction", name: "Giới thiệu" },
@@ -13,6 +13,27 @@ export default function AboutPage() {
     { id: "team", name: "Đội ngũ Lãnh đạo và Chuyên gia" },
     { id: "partner", name: "Đối tác của SCEI" },
   ];
+
+  const dataTeam = [
+    {
+      id: 1,
+      name: "Vũ Trọng Chiến",
+      email: "chienvt@hpu.edu.vn",
+      position: "Ban cố vấn"
+    },
+    {
+      id: 1,
+      name: "Đỗ Văn Tuyên",
+      email: "tuyendv@hpu.edu.vn",
+      position: "Ban cố vấn"
+    },
+    {
+      id: 1,
+      name: "Nguyễn Thái Vĩnh",
+      email: "vinhnt@hpu.edu.vn",
+      position: "Ban cố vấn"
+    },
+  ]
 
   const [activeMenu, setActiveMenu] = useState(null);
 
@@ -40,14 +61,21 @@ export default function AboutPage() {
           </h1>
 
           {/* Introduction Section */}
-          <section id="introduction" className="mb-10 min-h-[700px] border-b pb-6">
-            <h2 className="text-3xl font-semibold mb-4 text-gray-800">Giới thiệu về Trung tâm</h2>
+          <section
+            id="introduction"
+            className="mb-10 min-h-[700px] border-b pb-6"
+          >
+            <h2 className="text-3xl font-semibold mb-4 text-gray-800">
+              Giới thiệu về Trung tâm
+            </h2>
             <div className="pl-6 text-gray-700 text-lg leading-relaxed">
               <p>
-                <span className="font-bold">1.</span> Tên tiếng Việt: Trung tâm hỗ trợ Khởi nghiệp Đổi mới sáng tạo
+                <span className="font-bold">1.</span> Tên tiếng Việt: Trung tâm
+                hỗ trợ Khởi nghiệp Đổi mới sáng tạo
               </p>
               <p>
-                <span className="font-bold">2.</span> Tên tiếng Anh: Supporting Center for Entrepreneurship Innovation
+                <span className="font-bold">2.</span> Tên tiếng Anh: Supporting
+                Center for Entrepreneurship Innovation
               </p>
               <p>
                 <span className="font-bold">3.</span> Tên viết tắt: SCEI
@@ -56,35 +84,51 @@ export default function AboutPage() {
                 <span className="font-bold">4.</span> Loại hình tổ chức:
               </p>
               <ul className="list-disc pl-8 leading-relaxed">
-                <li>Trực thuộc Trường Đại học Quản lý và Công nghệ Hải Phòng</li>
+                <li>
+                  Trực thuộc Trường Đại học Quản lý và Công nghệ Hải Phòng
+                </li>
                 <li>Có tư cách pháp nhân, tài khoản và mã số thuế riêng</li>
                 <li>Hoạt động với cơ chế tài chính độc lập</li>
               </ul>
             </div>
-            <div>
-              
-            </div>
+            <div></div>
           </section>
 
           {/* Vision Section */}
-          <section id="tam-nhin-su-menh" className="mb-10 min-h-[700px] border-b pb-6">
-            <h2 className="text-3xl font-semibold mb-4 text-gray-800">Tầm nhìn & Sứ mệnh</h2>
+          <section
+            id="tam-nhin-su-menh"
+            className="mb-10 min-h-[700px] border-b pb-6"
+          >
+            <h2 className="text-3xl font-semibold mb-4 text-gray-800">
+              Tầm nhìn & Sứ mệnh
+            </h2>
             <div className="text-gray-700 text-lg leading-relaxed">
               <p className="mb-4">
-                <span className="font-bold">1. Tầm nhìn:</span> Trở thành Trung tâm hàng đầu trong việc thúc đẩy và hỗ trợ
-                Khởi nghiệp Đổi mới sáng tạo, chuyển giao công nghệ tại Hải Phòng nói riêng và khu vực phía Bắc nói
-                chung.
+                <span className="font-bold">1. Tầm nhìn:</span> Trở thành Trung
+                tâm hàng đầu trong việc thúc đẩy và hỗ trợ Khởi nghiệp Đổi mới
+                sáng tạo, chuyển giao công nghệ tại Hải Phòng nói riêng và khu
+                vực phía Bắc nói chung.
               </p>
               <p>
-                <span className="font-bold">2. Sứ mệnh:</span> Kết nối doanh nghiệp, hỗ trợ sinh viên, cựu sinh viên và
-                thực hiện các hoạt động Đổi mới sáng tạo, chuyển giao công nghệ và Khởi nghiệp.
+                <span className="font-bold">2. Sứ mệnh:</span> Kết nối doanh
+                nghiệp, hỗ trợ sinh viên, cựu sinh viên và thực hiện các hoạt
+                động Đổi mới sáng tạo, chuyển giao công nghệ và Khởi nghiệp.
               </p>
             </div>
+            <Image
+              as={NextImage}
+              width={300}
+              height={200}
+              src="/tam-nhin.png"
+              alt="NextUI hero Image"
+            />
           </section>
 
           {/* Services Section */}
           <section id="services" className="mb-10 min-h-[700px] border-b pb-6">
-            <h2 className="text-3xl font-semibold mb-3 text-gray-800">Dịch vụ và Chương trình Hỗ trợ</h2>
+            <h2 className="text-3xl font-semibold mb-3 text-gray-800">
+              Dịch vụ và Chương trình Hỗ trợ
+            </h2>
             <div className="text-gray-700 text-lg leading-relaxed">
               <p className="mb-3">
                 Trung tâm cung cấp nhiều dịch vụ hỗ trợ khác nhau, bao gồm:
@@ -96,40 +140,49 @@ export default function AboutPage() {
                 <li>Các buổi cố vấn cá nhân</li>
               </ul>
               <p className="mt-3">
-                Chúng tôi cũng tổ chức các sự kiện, hội thảo và cuộc thi định kỳ như hackathon và hội thảo theo ngành.
+                Chúng tôi cũng tổ chức các sự kiện, hội thảo và cuộc thi định kỳ
+                như hackathon và hội thảo theo ngành.
               </p>
             </div>
           </section>
 
           {/* Team Section */}
           <section id="team" className="mb-10 min-h-[700px] border-b pb-6">
-            <h2 className="text-3xl font-semibold mb-3 text-gray-800">Đội ngũ Lãnh đạo và Chuyên gia</h2>
+            <h2 className="text-3xl font-semibold mb-3 text-gray-800">
+              Đội ngũ Lãnh đạo và Chuyên gia
+            </h2>
             <div className="text-gray-700 text-lg leading-relaxed">
               <p className="mb-4">
-                Gặp gỡ đội ngũ lãnh đạo, cố vấn và nhân viên của chúng tôi. Các chuyên gia của chúng tôi có nhiều kinh
-                nghiệm trong lĩnh vực của họ, góp phần thúc đẩy sứ mệnh của trung tâm.
+                Gặp gỡ đội ngũ lãnh đạo, cố vấn và nhân viên của chúng tôi. Các
+                chuyên gia của chúng tôi có nhiều kinh nghiệm trong lĩnh vực của
+                họ, góp phần thúc đẩy sứ mệnh của trung tâm.
               </p>
-              <ul className="list-disc list-inside">
+              {/* <ul className="list-disc list-inside">
                 <li>Thầy Trần Hữu Trung - Người sáng lập & CEO</li>
                 <li>Anh Trần Đình Quý - Cố vấn chính</li>
-                <li>Cùng các chuyên gia khác cam kết hỗ trợ đổi mới sáng tạo.</li>
-              </ul>
+                <li>
+                  Cùng các chuyên gia khác cam kết hỗ trợ đổi mới sáng tạo.
+                </li>
+              </ul> */}
             </div>
-            <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3 mt-5">
-              <AvataCard />
-              <AvataCard />
-              <AvataCard />
+            <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3 mt-5">
+              {dataTeam.map((item,index) => (
+                <AvataCard key={index} name={item.name} position={item.position} email={item.email}/>
+              ))}
             </div>
           </section>
 
           {/* Partner Section */}
           <section id="partner" className="mb-10 min-h-[700px]">
-            <h2 className="text-3xl font-semibold mb-3 text-gray-800">Đối tác của SCEI</h2>
+            <h2 className="text-3xl font-semibold mb-3 text-gray-800">
+              Đối tác của SCEI
+            </h2>
             <div className="text-gray-700 text-lg leading-relaxed mb-5">
               <p>
-                Trung tâm Hỗ trợ Đổi mới và Sáng tạo cam kết đồng hành cùng hệ sinh thái khởi nghiệp và sáng tạo, tạo
-                động lực cho sự phát triển bền vững. Trung tâm tập trung xây dựng một mạng lưới kết nối mạnh mẽ giữa các
-                đối tác quan trọng.
+                Trung tâm Hỗ trợ Đổi mới và Sáng tạo cam kết đồng hành cùng hệ
+                sinh thái khởi nghiệp và sáng tạo, tạo động lực cho sự phát
+                triển bền vững. Trung tâm tập trung xây dựng một mạng lưới kết
+                nối mạnh mẽ giữa các đối tác quan trọng.
               </p>
             </div>
             <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
@@ -137,7 +190,10 @@ export default function AboutPage() {
               <PartnerCard name="Đại học quản lý và công nghệ Hải Phòng" />
               <PartnerCard name="Đại học quản lý và công nghệ Hải Phòng" />
             </div>
-            <Link href="/contact" className="text-blue-500 hover:underline font-medium">
+            <Link
+              href="/contact"
+              className="text-blue-500 hover:underline font-medium"
+            >
               Trở thành đối tác của SCEI
             </Link>
           </section>
@@ -159,24 +215,6 @@ export default function AboutPage() {
             ))}
           </ul>
         </div>
-
-        {/* Mobile Navbar */}
-        <Navbar className="md:hidden bg-gray-100">
-          <NavbarMenu className="bg-white/80 backdrop-blur-sm shadow-md">
-            {dataMenuAbout.map((item) => (
-              <NavbarMenuItem key={item.id}>
-                <button
-                  onClick={() => handleClickItemMenu(item.id)}
-                  className={`${
-                    activeMenu === item.id ? "text-[#007bb5]" : "text-gray-700"
-                  } text-lg font-medium`}
-                >
-                  {item.name}
-                </button>
-              </NavbarMenuItem>
-            ))}
-          </NavbarMenu>
-        </Navbar>
       </div>
     </div>
   );
