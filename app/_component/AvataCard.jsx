@@ -19,13 +19,13 @@ const AvataCard = ({ name, position, email }) => {
           <h4 className="font-bold text-large text-blue-500">{email}</h4>
         </CardHeader>
         <CardBody className="overflow-visible w-full py-2">
-          <Image
-            height={200}
-            width={200}
-            alt="Card background"
-            className="object-cover w-full rounded-xl p-2"
-            src="/team/nguyen-the-hung.jpg"
-          />
+          <div className="w-full h-full flex items-center justify-center overflow-y-hidden">
+            <Image
+              alt="Card background"
+              className="object-cover w-full rounded-xl p-2"
+              src="/team/nguyen-the-hung.jpg"
+            />
+          </div>
         </CardBody>
       </Card>
     </>
