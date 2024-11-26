@@ -157,13 +157,6 @@ export default function AboutPage() {
                 chuyên gia của chúng tôi có nhiều kinh nghiệm trong lĩnh vực của
                 họ, góp phần thúc đẩy sứ mệnh của trung tâm.
               </p>
-              {/* <ul className="list-disc list-inside">
-                <li>Thầy Trần Hữu Trung - Người sáng lập & CEO</li>
-                <li>Anh Trần Đình Quý - Cố vấn chính</li>
-                <li>
-                  Cùng các chuyên gia khác cam kết hỗ trợ đổi mới sáng tạo.
-                </li>
-              </ul> */}
             </div>
             <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3 mt-5">
               {dataTeam.map((item,index) => (

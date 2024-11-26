@@ -20,9 +20,11 @@ const AvataCard = ({ name, position, email }) => {
         </CardHeader>
         <CardBody className="overflow-visible w-full py-2">
           <Image
+            height={200}
+            width={200}
             alt="Card background"
             className="object-cover w-full rounded-xl p-2"
-            src="https://nextui.org/images/hero-card-complete.jpeg"
+            src="/team/nguyen-the-hung.jpg"
           />
         </CardBody>
       </Card>
