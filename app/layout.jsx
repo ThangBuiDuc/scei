@@ -22,7 +22,7 @@ export default function Layout({ children }) {
             </ReactQueryProvider>
           </NextUIProvider>
         </body>
-      </ClerkProvider>  
+      </ClerkProvider>
     </html>
   );
 }
