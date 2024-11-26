@@ -58,14 +58,14 @@ export default function AboutPage() {
       {/* Content Layout */}
       <div className="flex gap-5 max-w-screen-xl w-full mx-auto px-5 py-10 bg-white shadow-lg rounded-lg relative text-justify">
         {/* Left Content */}
-        <div className="flex flex-col gap-8 w-full md:w-5/6 pr-5">
-          <h1 className="text-4xl font-extrabold mb-5 text-[#007bb5] leading-tight">
+        <div className="flex flex-col gap-8 w-full md:w-5/6">
+          <h1 className="text-4xl font-extrabold mb-5 text-[#007bb5] text-center leading-tight">
             Trung tâm hỗ trợ khởi nghiệp đổi mới sáng tạo
           </h1>
 
           {/* Introduction Section */}
-          <section id="introduction" className="min-h-[700px] border-b">
-            <h2 className="text-3xl font-semibold mb-4 text-gray-800">Giới thiệu về Trung tâm</h2>
+          <section id="introduction" className="min-h-[500px] pb-3 border-b">
+            <h2 className="text-center sm:text-left text-3xl font-semibold mb-4 text-gray-800">Giới thiệu về Trung tâm</h2>
             <div className="pl-6 text-gray-700 text-lg leading-relaxed">
               <p>
                 <span className="font-bold">1.</span> Tên tiếng Việt: Trung tâm
@@ -101,8 +101,8 @@ export default function AboutPage() {
           </section>
 
           {/* Vision Section */}
-          <section id="tam-nhin-su-menh" className="min-h-[700px] border-b">
-            <h2 className="text-3xl font-semibold mb-4 text-gray-800">Tầm nhìn & Sứ mệnh</h2>
+          <section id="tam-nhin-su-menh" className="min-h-[500px] pb-3 border-b">
+            <h2 className="text-center sm:text-left text-3xl font-semibold mb-4 text-gray-800">Tầm nhìn & Sứ mệnh</h2>
             <div className="text-gray-700 text-lg leading-relaxed">
               <p className="mb-4">
                 <span className="font-bold">1. Tầm nhìn:</span> Trở thành Trung
@@ -125,8 +125,8 @@ export default function AboutPage() {
           </section>
 
           {/* Services Section */}
-          <section id="services" className="mb-10 min-h-[700px] border-b pb-6">
-            <h2 className="text-3xl font-semibold mb-3 text-gray-800">
+          <section id="services" className="mb-10 min-h-[500px] pb-3 border-b">
+            <h2 className="text-center sm:text-left text-3xl font-semibold mb-3 text-gray-800">
               Dịch vụ và Chương trình Hỗ trợ
             </h2>
             <div className="text-gray-700 text-lg leading-relaxed">
@@ -153,8 +153,8 @@ export default function AboutPage() {
           </section>
 
           {/* Team Section */}
-          <section id="team" className="mb-10 min-h-[700px] border-b pb-6">
-            <h2 className="text-3xl font-semibold mb-3 text-gray-800">
+          <section id="team" className="mb-10 min-h-[500px] pb-3 border-b">
+            <h2 className="text-center sm:text-left text-3xl font-semibold mb-3 text-gray-800">
               Đội ngũ Lãnh đạo và Chuyên gia
             </h2>
             <div className="text-gray-700 text-lg leading-relaxed">
@@ -173,8 +173,8 @@ export default function AboutPage() {
           </section>
 
           {/* Partner Section */}
-          <section id="partner" className="min-h-[700px]">
-            <h2 className="text-3xl font-semibold mb-3 text-gray-800">Đối tác của SCEI</h2>
+          <section id="partner" className="min-h-[500px] pb-3">
+            <h2 className="text-center sm:text-left text-3xl font-semibold mb-3 text-gray-800">Đối tác của SCEI</h2>
             <div className="text-gray-700 text-lg leading-relaxed mb-5">
               <p>
                 Trung tâm Hỗ trợ Đổi mới và Sáng tạo cam kết đồng hành cùng hệ
