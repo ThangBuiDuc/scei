@@ -1,7 +1,7 @@
 import MyNavbar from "../_hardComponent/navbar/Navbar";
 import Footer from "../_hardComponent/footer/Footer";
 export const metadata = {
-  title: "SCEI",
+  title: "Trung tâm hỗ trợ khởi nghiệp đổi mới sáng tạo",
   description: "Khởi nghiệp, đổi mới, sáng tạo",
 };
 

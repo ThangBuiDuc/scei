@@ -1,5 +1,5 @@
 "use client";
-import React, {useState} from "react";
+import React, { useState } from "react";
 import Link from "next/link";
 import {
   Navbar,
@@ -39,16 +39,16 @@ const dataMenuMobile = [
     name: "Liên hệ",
     href: "/contact",
   },
-]
+];
 
 const MyNavbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [activeMenu, setActiveMenu] = useState(0);
 
   const handleClickItemMenu = (id) => {
-    setActiveMenu(id)
-    setIsMenuOpen(false)
-  }
+    setActiveMenu(id);
+    setIsMenuOpen(false);
+  };
   const icons = {
     chevron: <ChevronDown fill="currentColor" size={16} />,
     news: <NewsIcon fill="currentColor" size={30} />,
@@ -74,7 +74,7 @@ const MyNavbar = () => {
     >
       <NavbarBrand as={Link} href="/">
         <AcmeLogo />
-        <p className="font-bold text-inherit">SCEI</p>
+        {/* <p className="font-bold text-inherit">SCEI</p> */}
       </NavbarBrand>
       <NavbarContent className="sm:hidden" justify="end">
         <NavbarMenuToggle />
@@ -132,9 +132,16 @@ const MyNavbar = () => {
       </NavbarContent>
 
       <NavbarMenu className="bg-[#f3f2f2]/80">
-        {dataMenuMobile.map(i => (
-          <NavbarMenuItem key={i.id} >
-            <Link onClick={() => handleClickItemMenu(i.id)} href={i.href} aria-current="page" className={`${activeMenu === i.id ? "text-[#3a95ca]" : "text-[#11181c]"} text-xl`}>
+        {dataMenuMobile.map((i) => (
+          <NavbarMenuItem key={i.id}>
+            <Link
+              onClick={() => handleClickItemMenu(i.id)}
+              href={i.href}
+              aria-current="page"
+              className={`${
+                activeMenu === i.id ? "text-[#3a95ca]" : "text-[#11181c]"
+              } text-xl`}
+            >
               {i.name}
             </Link>
           </NavbarMenuItem>
@@ -158,14 +165,22 @@ const MyNavbar = () => {
 export default MyNavbar;
 
 export const AcmeLogo = () => (
-  <svg fill="none" height="36" viewBox="0 0 32 32" width="36">
-    <path
-      clipRule="evenodd"
-      d="M17.6482 10.1305L15.8785 7.02583L7.02979 22.5499H10.5278L17.6482 10.1305ZM19.8798 14.0457L18.11 17.1983L19.394 19.4511H16.8453L15.1056 22.5499H24.7272L19.8798 14.0457Z"
-      fill="currentColor"
-      fillRule="evenodd"
-    />
-  </svg>
+  // <svg >
+  //   <path
+  //     clipRule="evenodd"
+  //     d="M17.6482 10.1305L15.8785 7.02583L7.02979 22.5499H10.5278L17.6482 10.1305ZM19.8798 14.0457L18.11 17.1983L19.394 19.4511H16.8453L15.1056 22.5499H24.7272L19.8798 14.0457Z"
+  //     fill="currentColor"
+  //     fillRule="evenodd"
+  //   />
+  // </svg>
+  <img
+    alt="logo"
+    src="/SCEI3.png"
+    fill="none"
+    height="36"
+    viewBox="0 0 32 32"
+    width="36"
+  />
 );
 
 export const ChevronDown = ({ fill, size, height, width, ...props }) => {

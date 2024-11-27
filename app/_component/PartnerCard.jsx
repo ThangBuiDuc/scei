@@ -20,8 +20,10 @@ const PartnerCard = ({ name }) => {
           <Image
             removeWrapper
             alt="Card background"
-            className="w-full h-full object-cover"
+            className="w-full h-full rounded-lg object-cover overflow-hidden p-5"
             src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSKQiZ8xEKjm9Y9Yy0K-RYIU-VL-JYixw7Zkw&s"
+            width={250}
+            height={250}
           />
         </CardBody>
       </Card>

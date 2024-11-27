@@ -1,4 +1,3 @@
-// EventCard.jsx
 "use client";
 import React from "react";
 import {
@@ -6,22 +5,25 @@ import {
   Button,
   CardHeader,
   CardBody,
-  Image,
-  CardFooter,
   useDisclosure,
 } from "@nextui-org/react";
 import Link from "next/link";
 import EventRegistrationModal from "../EventRegistrationModal";
 
-const EventCard = ({ event,isVisible }) => {
+const EventCard = ({ event, isVisible }) => {
   const { isOpen, onOpen, onOpenChange } = useDisclosure();
 
   const eventDate = new Date(event.start_time);
+  const registrationDeadline = new Date(event.registration_time);
+  const currentDate = new Date();
+
   const hours = eventDate.getHours().toString().padStart(2, "0");
   const minutes = eventDate.getMinutes().toString().padStart(2, "0");
   const day = eventDate.getDate();
   const month = eventDate.toLocaleString("default", { month: "short" });
   const year = eventDate.getFullYear();
+
+  const isRegistrationClosed = currentDate > registrationDeadline;
 
   return (
     <>
@@ -44,12 +46,12 @@ const EventCard = ({ event,isVisible }) => {
                 <span className="block text-sm">Month</span>
               </div>
               <div className="text-center px-2 border-l-2 border-gray-300">
-                <span className="block text-base font-bold ">{year}</span>
+                <span className="block text-base font-bold">{year}</span>
                 <span className="block text-sm">Year</span>
               </div>
             </div>
           </div>
-          <div className="md:w-3/5 w-full h-full flex md:justify-start justify-center  items-center sm:px-8 px-4 py-2">
+          <div className="md:w-3/5 w-full h-full flex md:justify-start justify-center items-center sm:px-8 px-4 py-2">
             <span className="text-md bg-green-100 text-green-800 font-medium me-2 px-2.5 rounded-full ">
               {event.event_type.name}
             </span>
@@ -72,8 +74,9 @@ const EventCard = ({ event,isVisible }) => {
               <Button
                 radius="sm"
                 color="warning"
-                className="text-large text-white"
+                className={`text-large ${isRegistrationClosed ? "opacity-50 cursor-not-allowed" : "text-white"}`}
                 onPress={onOpen}
+                isDisabled={isRegistrationClosed}
               >
                 Tham gia ngay
               </Button>
@@ -86,9 +89,7 @@ const EventCard = ({ event,isVisible }) => {
             </div>
           </div>
         </CardBody>
-        {/* <CardFooter></CardFooter> */}
       </Card>
-      {/* Use EventRegistrationModal component */}
       <EventRegistrationModal
         isOpen={isOpen}
         onClose={() => onOpenChange(false)}

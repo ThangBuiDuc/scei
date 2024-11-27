@@ -74,7 +74,7 @@ export default async function HomePage() {
             <Image
               width="100%"
               alt="createImage"
-              src="/gioithieu.png"
+              src="/demo2.jfif"
               className="w-full m-auto"
             />
           </div>

@@ -6,8 +6,11 @@ import { ClerkProvider } from "@clerk/nextjs";
 import { viVN } from "@clerk/localizations";
 
 export const metadata = {
-  title: "SCEI",
+  title: "Trung tâm hỗ trợ khởi nghiệp đổi mới sáng tạo",
   description: "Khởi nghiệp, đổi mới, sáng tạo",
+  icons: {
+    icon: "/SCEI3.png",
+  }
 };
 
 export default function Layout({ children }) {

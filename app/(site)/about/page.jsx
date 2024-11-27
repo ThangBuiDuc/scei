@@ -18,22 +18,58 @@ export default function AboutPage() {
 
   const dataTeam = [
     {
-      id: 1,
       name: "Vũ Trọng Chiến",
       email: "chienvt@hpu.edu.vn",
-      position: "Ban cố vấn"
+      position: "Ban cố vấn",
+      img:"/team/vutrongchien.jpg"
     },
     {
-      id: 1,
       name: "Đỗ Văn Tuyên",
       email: "tuyendv@hpu.edu.vn",
-      position: "Ban cố vấn"
+      position: "Ban cố vấn",
+      img:""
     },
     {
-      id: 1,
-      name: "Nguyễn Thái Vĩnh",
-      email: "vinhnt@hpu.edu.vn",
-      position: "Ban cố vấn"
+      name: "Nguyễn Thế Hùng",
+      email: "",
+      position: "Ban cố vấn",
+      img:"/team/nguyen-the-hung.jpg"
+    },
+    {
+      name: "Phạm Văn Hồi",
+      email: "",
+      position: "Ban cố vấn",
+      img:"/team/phamvanhoi.jpg"
+    },
+    {
+      name: "Nguyễn Thị Hoàng Đan",
+      email: "dannth@hpu.edu.vn",
+      position: "Ban cố vấn",
+      img:"/team/nguyenthihoangdan.jpg"
+    },
+    {
+      name: "Trần Hữu Trung",
+      email: "",
+      position: "Ban cố vấn",
+      img:""
+    },
+    {
+      name: "Phan Giang Sơn",
+      email: "",
+      position: "Ban cố vấn",
+      img:"/team/phansongiang.jpg"
+    },
+    {
+      name: "Lê Đình Mạnh",
+      email: "ctm.manhledinh@gmail.com",
+      position: "Ban cố vấn",
+      img:"/team/ledinhmanh.jpg"
+    },
+    {
+      name: "TS.Nguyễn Đại Ân",
+      email: "annd@hpu.edu.vn",
+      position: "Ban cố vấn",
+      img:"/team/nguyendaian.jpg"
     },
   ]
 
@@ -167,7 +203,7 @@ export default function AboutPage() {
             </div>
             <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3 mt-5">
               {dataTeam.map((item,index) => (
-                <AvataCard key={index} name={item.name} position={item.position} email={item.email}/>
+                <AvataCard key={index} name={item.name} position={item.position} email={item?.email} img={item.img}/>
               ))}
             </div>
           </section>
@@ -183,7 +219,7 @@ export default function AboutPage() {
                 nối mạnh mẽ giữa các đối tác quan trọng.
               </p>
             </div>
-            <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3 pb-10">
               <PartnerCard name="Đại học quản lý và công nghệ Hải Phòng" />
               <PartnerCard name="Đại học quản lý và công nghệ Hải Phòng" />
               <PartnerCard name="Đại học quản lý và công nghệ Hải Phòng" />
@@ -192,7 +228,7 @@ export default function AboutPage() {
               href="/contact"
               className="text-blue-500 hover:underline font-medium"
             >
-              Trở thành đối tác của SCEI
+              Trở thành đối tác của SCEI tại đây!
             </Link>
           </section>
         </div>
