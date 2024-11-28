@@ -21,11 +21,19 @@ export default async function HomePage() {
   return (
     <div className="w-full h-full">
       <div className="w-full bg-slate-600 ">
-        <img
+        {/* <img
           alt="home img"
           // src={events[0].image_url}
           src="/homebg.jpg"
           className="w-full h-auto object-cover"
+        /> */}
+        <Image 
+          alt="homeimg"
+          src="/homebg.jpg"
+          // src={homeImg}
+          width={"100%"}
+          height={"auto"}
+          className="object-cover"
         />
       </div>
 
