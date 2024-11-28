@@ -2,7 +2,6 @@ import Image from "next/image";
 import { Button } from "@nextui-org/button";
 import { Link } from "@nextui-org/react";
 import ArticleSlide from "../_component/articleSlide/ArticleSlide";
-
 import EventSlide from "../_component/eventSlide/EventSlide";
 import { getArticlesData, getEventsData } from "@/utils/funcionApi/select";
 
