@@ -29,7 +29,7 @@ const Footer = () => {
             </div>
             <div className="flex items-center text-gray-600 font-semibold gap-5">
               <FaPhoneAlt className="h-5 w-5 mr-2" />
-              Số điện thoại: 0936 821 821 - 0901 598 698
+              Số điện thoại: 0989 320 383
             </div>
             <div className="flex items-center text-gray-600 font-semibold gap-5">
               <FaClock className="h-5 w-5 mr-2" />

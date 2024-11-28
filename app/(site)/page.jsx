@@ -23,7 +23,8 @@ export default async function HomePage() {
       <div className="w-full bg-slate-600 ">
         <img
           alt="home img"
-          src={events[0].image_url}
+          // src={events[0].image_url}
+          src="/homebg.jpg"
           className="w-full h-auto object-cover"
         />
       </div>

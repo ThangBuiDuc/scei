@@ -27,7 +27,7 @@ export default function AboutPage() {
       name: "Đỗ Văn Tuyên",
       email: "tuyendv@hpu.edu.vn",
       position: "Ban cố vấn",
-      img:""
+      img:"/team/tuyendv.jpg"
     },
     {
       name: "Nguyễn Thế Hùng",
@@ -51,7 +51,7 @@ export default function AboutPage() {
       name: "Trần Hữu Trung",
       email: "",
       position: "Ban cố vấn",
-      img:""
+      img:"/team/trunght.jpg"
     },
     {
       name: "Phan Giang Sơn",
@@ -183,8 +183,9 @@ export default function AboutPage() {
             <Image
               className="object-cover h-[300px] md:h-[400px] w-full mt-5"
               width="100%"
-              alt="anh 1"
-              src="/anh1.jpg"
+              height="auto"
+              alt="anh dich vu"
+              src="/aboutpic/dichvu.jpg"
             />
           </section>
 
@@ -221,8 +222,8 @@ export default function AboutPage() {
             </div>
             <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3 pb-10">
               <PartnerCard name="Đại học quản lý và công nghệ Hải Phòng" />
-              <PartnerCard name="Đại học quản lý và công nghệ Hải Phòng" />
-              <PartnerCard name="Đại học quản lý và công nghệ Hải Phòng" />
+              {/* <PartnerCard name="Đại học quản lý và công nghệ Hải Phòng" />
+              <PartnerCard name="Đại học quản lý và công nghệ Hải Phòng" /> */}
             </div>
             <Link
               href="/contact"

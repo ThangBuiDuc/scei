@@ -17,14 +17,16 @@ const PartnerCard = ({ name }) => {
           <p className="text-sm text-black/60 uppercase font-bold">{name}</p>
         </CardHeader>
         <CardBody className="mt-2">
-          <Image
-            removeWrapper
-            alt="Card background"
-            className="w-full h-full rounded-lg object-cover overflow-hidden p-5"
-            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSKQiZ8xEKjm9Y9Yy0K-RYIU-VL-JYixw7Zkw&s"
-            width={250}
-            height={250}
-          />
+          <div className="flex items-center justify-center p-5 overflow-hidden">
+            <Image
+              removeWrapper
+              alt="Card background"
+              className="w-full h-full rounded-2xl object-cover overflow-hidden"
+              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSKQiZ8xEKjm9Y9Yy0K-RYIU-VL-JYixw7Zkw&s"
+              width={200}
+              height={200}
+            />
+          </div>
         </CardBody>
       </Card>
     </>
