@@ -1,10 +1,11 @@
 // "use client";
 // import React, { useRef, useState } from "react";
-import { Image } from "@nextui-org/image";
+import Image from "next/image";
 import { Button } from "@nextui-org/button";
 import { Link } from "@nextui-org/react";
 import ArticleSlide from "../_component/articleSlide/ArticleSlide";
 import EventSlide from "../_component/eventSlide/EventSlide";
+// import homebg from "/homebg.jpg";
 // import { articles } from "./data";
 
 import { getArticlesData, getEventsData } from "@/utils/funcionApi/select";
@@ -27,13 +28,14 @@ export default async function HomePage() {
           src="/homebg.jpg"
           className="w-full h-auto object-cover"
         /> */}
-        <Image 
+        <Image
           alt="homeimg"
           src="/homebg.jpg"
           // src={homeImg}
           width={"100%"}
           height={"auto"}
           className="object-cover"
+          priority
         />
       </div>
 
