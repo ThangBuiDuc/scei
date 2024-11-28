@@ -60,7 +60,7 @@ const EventCard = ({ event, isVisible }) => {
         <CardBody className="flex md:flex-row md:gap-y-0 gap-y-6 flex-col items-start h-full">
           <div className="md:w-2/5 h-full rounded-r-lg overflow-hidden">
             <img
-              className="object-cover rounded-xl w-full"
+              className="object-cover rounded-xl w-full h-auto"
               src={event.image_url}
               alt="Event image"
             />

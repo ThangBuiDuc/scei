@@ -17,15 +17,15 @@ export default async function HomePage() {
   return (
     <div className="w-full h-full">
       <div className="w-full bg-slate-600 ">
-        <Image
+        <img
           alt="homeimg"
           src="/anhhomegiamdungluong2.webp"
-          width={1920}
-          height={1080}
-          sizes="100vw"
+          // width={1920}
+          // height={1080}
+          // sizes="100vw"
           style={{ width: "100%", height: "auto" }}
           className="object-cover"
-          priority
+          // priority
         />
       </div>
 
@@ -72,12 +72,12 @@ export default async function HomePage() {
             </Button>
           </div>
           <div className="w-full lg:w-1/2 h-full lg:m-5 gap-5 p-2 lg:p-0">
-            <Image
-              width={0}
-              height={0}
+            <img
+              // width={0}
+              // height={0}
               alt="createImage"
               src="/demo2.jpg"
-              sizes="100vw"
+              // sizes="100vw"
               style={{ width: "100%", height: "auto" }}
               // className="object-cover"
               className="w-full m-auto"
