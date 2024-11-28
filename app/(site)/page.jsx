@@ -1,5 +1,3 @@
-// "use client";
-// import React, { useRef, useState } from "react";
 import Image from "next/image";
 import { Button } from "@nextui-org/button";
 import { Link } from "@nextui-org/react";
@@ -22,9 +20,9 @@ export default async function HomePage() {
       <div className="w-full bg-slate-600 ">
         <Image
           alt="homeimg"
-          src="/homebg.jpg"
-          width={0}
-          height={0}
+          src="/anhhomegiamdungluong2.webp"
+          width={1920}
+          height={1080}
           sizes="100vw"
           style={{ width: "100%", height: "auto" }}
           className="object-cover"
