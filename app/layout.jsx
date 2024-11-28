@@ -3,7 +3,6 @@ import { NextUIProvider } from "@nextui-org/react";
 import { Toaster } from "react-hot-toast";
 import ReactQueryProvider from "./ReactQueryProvider";
 import { ClerkProvider } from "@clerk/nextjs";
-
 import { viVN } from "@clerk/localizations";
 
 export const metadata = {
