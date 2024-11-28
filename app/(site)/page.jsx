@@ -23,7 +23,7 @@ export default async function HomePage() {
           // width={1920}
           // height={1080}
           // sizes="100vw"
-          style={{ width: "100%", height: "auto" }}
+          style={{ width: "100%", height: "80vw" }}
           className="object-cover"
           // priority
         />
