@@ -5,8 +5,6 @@ import { Button } from "@nextui-org/button";
 import { Link } from "@nextui-org/react";
 import ArticleSlide from "../_component/articleSlide/ArticleSlide";
 import EventSlide from "../_component/eventSlide/EventSlide";
-// import homebg from "/homebg.jpg";
-// import { articles } from "./data";
 
 import { getArticlesData, getEventsData } from "@/utils/funcionApi/select";
 
@@ -22,18 +20,13 @@ export default async function HomePage() {
   return (
     <div className="w-full h-full">
       <div className="w-full bg-slate-600 ">
-        {/* <img
-          alt="home img"
-          // src={events[0].image_url}
-          src="/homebg.jpg"
-          className="w-full h-auto object-cover"
-        /> */}
         <Image
           alt="homeimg"
           src="/homebg.jpg"
-          // src={homeImg}
-          width={"100%"}
-          height={"auto"}
+          width={0}
+          height={0}
+          sizes="100vw"
+          style={{ width: "100%", height: "auto" }}
           className="object-cover"
           priority
         />
@@ -83,9 +76,13 @@ export default async function HomePage() {
           </div>
           <div className="w-full lg:w-1/2 h-full lg:m-5 gap-5 p-2 lg:p-0">
             <Image
-              width="100%"
+              width={0}
+              height={0}
               alt="createImage"
-              src="/demo2.jfif"
+              src="/demo2.jpg"
+              sizes="100vw"
+              style={{ width: "100%", height: "auto" }}
+              // className="object-cover"
               className="w-full m-auto"
             />
           </div>
