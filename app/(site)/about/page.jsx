@@ -1,9 +1,9 @@
 "use client";
-import {useState} from "react";
+import { useState } from "react";
 
 import AvataCard from "@/app/_component/AvataCard";
 import PartnerCard from "@/app/_component/PartnerCard";
-import {Image} from "@nextui-org/react";
+import { Image } from "@nextui-org/react";
 import Link from "next/link";
 // import { Image } from "@nextui-org/image";
 import NextImage from "next/image";
@@ -18,60 +18,60 @@ export default function AboutPage() {
 
   const dataTeam = [
     {
-      name: "Vũ Trọng Chiến",
-      email: "chienvt@hpu.edu.vn",
-      position: "Ban cố vấn",
-      img:"/team/vutrongchien.jpg"
-    },
-    {
-      name: "Đỗ Văn Tuyên",
-      email: "tuyendv@hpu.edu.vn",
-      position: "Ban cố vấn",
-      img:"/team/tuyendv.jpg"
-    },
-    {
-      name: "Nguyễn Thế Hùng",
-      email: "",
-      position: "Ban cố vấn",
-      img:"/team/nguyen-the-hung.jpg"
-    },
-    {
-      name: "Phạm Văn Hồi",
-      email: "",
-      position: "Ban cố vấn",
-      img:"/team/phamvanhoi.jpg"
-    },
-    {
-      name: "Nguyễn Thị Hoàng Đan",
-      email: "dannth@hpu.edu.vn",
-      position: "Ban cố vấn",
-      img:"/team/nguyenthihoangdan.jpg"
-    },
-    {
-      name: "Trần Hữu Trung",
-      email: "",
-      position: "Ban cố vấn",
-      img:"/team/trunght.jpg"
-    },
-    {
-      name: "Phan Giang Sơn",
-      email: "",
-      position: "Ban cố vấn",
-      img:"/team/phansongiang.jpg"
-    },
-    {
-      name: "Lê Đình Mạnh",
-      email: "ctm.manhledinh@gmail.com",
-      position: "Ban cố vấn",
-      img:"/team/ledinhmanh.jpg"
-    },
-    {
-      name: "TS.Nguyễn Đại Ân",
+      name: "TS.Nguyễn Đại An",
       email: "annd@hpu.edu.vn",
       position: "Ban cố vấn",
-      img:"/team/nguyendaian.jpg"
+      img: "/team/nguyendaian.jpg",
     },
-  ]
+    {
+      name: "ThS.Lê Đình Mạnh",
+      email: "ctm.manhledinh@gmail.com",
+      position: "Ban cố vấn",
+      img: "/team/ledinhmanh.jpg",
+    },
+    {
+      name: "ThS.Phạm Văn Hồi",
+      email: "",
+      position: "Ban cố vấn",
+      img: "/team/phamvanhoi.jpg",
+    },
+    {
+      name: "ThS.Nguyễn Thế Hùng",
+      email: "",
+      position: "Ban cố vấn",
+      img: "/team/nguyen-the-hung.jpg",
+    },
+    {
+      name: "TS.Nguyễn Thị Hoàng Đan",
+      email: "dannth@hpu.edu.vn",
+      position: "Ban cố vấn",
+      img: "/team/nguyenthihoangdan.jpg",
+    },
+    {
+      name: "ThS.Phan Giang Sơn",
+      email: "",
+      position: "Ban cố vấn",
+      img: "/team/phansongiang.jpg",
+    },
+    {
+      name: "ThS.Vũ Trọng Chiến",
+      email: "chienvt@hpu.edu.vn",
+      position: "Ban cố vấn",
+      img: "/team/vutrongchien.jpg",
+    },
+    {
+      name: "ThS.Đỗ Văn Tuyên",
+      email: "tuyendv@hpu.edu.vn",
+      position: "Ban cố vấn",
+      img: "/team/tuyendv.jpg",
+    },
+    {
+      name: "ThS.Trần Hữu Trung",
+      email: "",
+      position: "Ban cố vấn",
+      img: "/team/thaytrung2.jpg",
+    },
+  ];
 
   // const [activeMenu, setActiveMenu] = useState(null);
 
@@ -101,7 +101,9 @@ export default function AboutPage() {
 
           {/* Introduction Section */}
           <section id="introduction" className="min-h-[500px] pb-3 border-b">
-            <h2 className="text-center sm:text-left text-3xl font-semibold mb-4 text-gray-800">Giới thiệu về Trung tâm</h2>
+            <h2 className="text-center sm:text-left text-3xl font-semibold mb-4 text-gray-800">
+              Giới thiệu về Trung tâm
+            </h2>
             <div className="pl-6 text-gray-700 text-lg leading-relaxed">
               <p>
                 <span className="font-bold">1.</span> Tên tiếng Việt: Trung tâm
@@ -125,9 +127,7 @@ export default function AboutPage() {
                 <li>Hoạt động với cơ chế tài chính độc lập</li>
               </ul>
             </div>
-            <div>
-              
-            </div>
+            <div></div>
             <Image
               className="object-cover h-[300px] md:h-[400px] w-full mt-5"
               width="100%"
@@ -137,8 +137,13 @@ export default function AboutPage() {
           </section>
 
           {/* Vision Section */}
-          <section id="tam-nhin-su-menh" className="min-h-[500px] pb-3 border-b">
-            <h2 className="text-center sm:text-left text-3xl font-semibold mb-4 text-gray-800">Tầm nhìn & Sứ mệnh</h2>
+          <section
+            id="tam-nhin-su-menh"
+            className="min-h-[500px] pb-3 border-b"
+          >
+            <h2 className="text-center sm:text-left text-3xl font-semibold mb-4 text-gray-800">
+              Tầm nhìn & Sứ mệnh
+            </h2>
             <div className="text-gray-700 text-lg leading-relaxed">
               <p className="mb-4">
                 <span className="font-bold">1. Tầm nhìn:</span> Trở thành Trung
@@ -200,18 +205,25 @@ export default function AboutPage() {
                 chuyên gia của chúng tôi có nhiều kinh nghiệm trong lĩnh vực của
                 họ, góp phần thúc đẩy sứ mệnh của trung tâm.
               </p>
-    
             </div>
             <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3 mt-5">
-              {dataTeam.map((item,index) => (
-                <AvataCard key={index} name={item.name} position={item.position} email={item?.email} img={item.img}/>
+              {dataTeam.map((item, index) => (
+                <AvataCard
+                  key={index}
+                  name={item.name}
+                  position={item.position}
+                  email={item?.email}
+                  img={item.img}
+                />
               ))}
             </div>
           </section>
 
           {/* Partner Section */}
           <section id="partner" className="min-h-[500px] pb-3">
-            <h2 className="text-center sm:text-left text-3xl font-semibold mb-3 text-gray-800">Đối tác của SCEI</h2>
+            <h2 className="text-center sm:text-left text-3xl font-semibold mb-3 text-gray-800">
+              Đối tác của SCEI
+            </h2>
             <div className="text-gray-700 text-lg leading-relaxed mb-5">
               <p>
                 Trung tâm Hỗ trợ Đổi mới và Sáng tạo cam kết đồng hành cùng hệ
