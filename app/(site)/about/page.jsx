@@ -23,7 +23,7 @@ export default function AboutPage() {
       img: "/team/nguyendaian.jpg",
     },
     {
-      name: "ThS.Lê Đình Mạnh",
+      name: "Chuyên gia Lê Đình Mạnh",
       email: "ctm.manhledinh@gmail.com",
       position: "Ban cố vấn",
       img: "/team/ledinhmanh.jpg",
