@@ -14,6 +14,7 @@ export default function AboutPage() {
     { id: "team", name: "Đội ngũ Lãnh đạo và Chuyên gia" },
     { id: "partner", name: "Đối tác của SCEI" },
   ];
+
   const dataTeam = [
     {
       name: "TS.Nguyễn Đại An",

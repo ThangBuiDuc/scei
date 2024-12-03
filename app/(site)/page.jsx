@@ -19,7 +19,7 @@ export default async function HomePage() {
           alt="homeimg"
           src="/anhhomegiamdungluong4.webp"
           width={1920}
-          height={1080}
+          height={0}
           sizes="100vw"
           style={{ width: "100%", height: "auto" }}
           className="object-cover"
