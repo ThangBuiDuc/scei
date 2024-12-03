@@ -14,7 +14,6 @@ export default function AboutPage() {
     { id: "team", name: "Đội ngũ Lãnh đạo và Chuyên gia" },
     { id: "partner", name: "Đối tác của SCEI" },
   ];
-
   const dataTeam = [
     {
       name: "TS.Nguyễn Đại An",
@@ -23,7 +22,7 @@ export default function AboutPage() {
       img: "/team/nguyendaian.webp",
     },
     {
-      name: "ThS.Lê Đình Mạnh",
+      name: "Chuyên gia Lê Đình Mạnh",
       email: "ctm.manhledinh@gmail.com",
       position: "Ban cố vấn",
       img: "/team/ledinhmanh.webp",
