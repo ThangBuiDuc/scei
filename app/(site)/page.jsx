@@ -10,17 +10,14 @@ export default async function HomePage() {
   const articlesRes = await getArticlesData(10, 0);
   const eventsRes = await getEventsData(10, 0);
 
-  // Extract data (adjust structure if needed)
   const articles = articlesRes.data.result;
   const events = eventsRes.data.result;
-  // console.log(articles)
-  // console.log(events)
   return (
     <div className="w-full h-full">
       <div className="w-full bg-slate-600 ">
         <Image
           alt="homeimg"
-          src="/anhhomegiamdungluong2.webp"
+          src="/anhhomegiamdungluong4.webp"
           width={1920}
           height={1080}
           sizes="100vw"
@@ -43,8 +40,6 @@ export default async function HomePage() {
             tạo đáp ứng nhu cầu phát triển. <br />
             Hỗ trợ sinh viên qua tư vấn, hội thảo và xây dựng hệ sinh thái khởi
             nghiệp trong trường.
-            {/* Tư vấn nghề nghiệp, đào tạo kỹ năng mềm và tổ chức thực tập, kiến
-            tập cho sinh viên. */}
           </p>
         </div>
       </div>
@@ -77,10 +72,9 @@ export default async function HomePage() {
               width={0}
               height={0}
               alt="createImage"
-              src="/demo2.jpg"
+              src="/demo2.webp"
               sizes="100vw"
               style={{ width: "100%", height: "auto" }}
-              // className="object-cover"
               className="w-full m-auto object-cover"
             />
           </div>

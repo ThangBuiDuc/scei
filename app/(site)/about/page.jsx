@@ -3,10 +3,9 @@ import { useState } from "react";
 
 import AvataCard from "@/app/_component/AvataCard";
 import PartnerCard from "@/app/_component/PartnerCard";
-import { Image } from "@nextui-org/react";
 import Link from "next/link";
-// import { Image } from "@nextui-org/image";
-import NextImage from "next/image";
+import { Image } from "@nextui-org/image";
+
 export default function AboutPage() {
   const dataMenuAbout = [
     { id: "introduction", name: "Giới thiệu" },
@@ -21,59 +20,57 @@ export default function AboutPage() {
       name: "TS.Nguyễn Đại An",
       email: "annd@hpu.edu.vn",
       position: "Ban cố vấn",
-      img: "/team/nguyendaian.jpg",
+      img: "/team/nguyendaian.webp",
     },
     {
       name: "ThS.Lê Đình Mạnh",
       email: "ctm.manhledinh@gmail.com",
       position: "Ban cố vấn",
-      img: "/team/ledinhmanh.jpg",
+      img: "/team/ledinhmanh.webp",
     },
     {
       name: "ThS.Phạm Văn Hồi",
       email: "",
       position: "Ban cố vấn",
-      img: "/team/phamvanhoi.jpg",
+      img: "/team/phamvanhoi.webp",
     },
     {
       name: "ThS.Nguyễn Thế Hùng",
       email: "",
       position: "Ban cố vấn",
-      img: "/team/nguyen-the-hung.jpg",
+      img: "/team/nguyen-the-hung.webp",
     },
     {
       name: "TS.Nguyễn Thị Hoàng Đan",
       email: "dannth@hpu.edu.vn",
       position: "Ban cố vấn",
-      img: "/team/nguyenthihoangdan.jpg",
+      img: "/team/nguyenthihoangdan.webp",
     },
     {
       name: "ThS.Phan Giang Sơn",
       email: "",
       position: "Ban cố vấn",
-      img: "/team/phansongiang.jpg",
+      img: "/team/phansongiang.webp",
     },
     {
       name: "ThS.Vũ Trọng Chiến",
       email: "chienvt@hpu.edu.vn",
       position: "Ban cố vấn",
-      img: "/team/vutrongchien.jpg",
+      img: "/team/vutrongchien.webp",
     },
     {
       name: "ThS.Đỗ Văn Tuyên",
       email: "tuyendv@hpu.edu.vn",
       position: "Ban cố vấn",
-      img: "/team/tuyendv.jpg",
+      img: "/team/tuyendv.webp",
     },
     {
       name: "ThS.Trần Hữu Trung",
       email: "",
       position: "Ban cố vấn",
-      img: "/team/thaytrung2.jpg",
+      img: "/team/thaytrung2.webp",
     },
   ];
-
-  // const [activeMenu, setActiveMenu] = useState(null);
 
   const [activeMenu, setActiveMenu] = useState(0);
   const handleClickItemMenu = (id) => {
@@ -84,8 +81,8 @@ export default function AboutPage() {
   // Function to handle smooth scrolling with offset
   const scrollToSection = (id) => {
     const section = document.getElementById(id);
-    const offset = 20; // Adjust this value based on your navbar height
-    const top = section.offsetTop - offset; // Calculate the scroll position with the offset
+    const offset = 20;
+    const top = section.offsetTop - offset;
     window.scrollTo({ top, behavior: "smooth" });
   };
 
@@ -127,12 +124,15 @@ export default function AboutPage() {
                 <li>Hoạt động với cơ chế tài chính độc lập</li>
               </ul>
             </div>
-            <div></div>
             <Image
               className="object-cover h-[300px] md:h-[400px] w-full mt-5"
-              width="100%"
+              width={0}
+              height={0}
+              sizes="100vw"
+              style={{ width: "100%", height: "auto" }}
               alt="anh 1"
-              src="/anh1.jpg"
+              src="/aboutpic/anh1.webp"
+              placeholder="blur"
             />
           </section>
 
@@ -158,10 +158,14 @@ export default function AboutPage() {
               </p>
             </div>
             <Image
-              className="object-cover h-[300px] md:h-[400px] w-full mt-5"
-              width="100%"
+              className="object-cover rounded-3xl h-[300px] md:h-[400px] w-full mt-5"
+              width={0}
+              height={0}
+              sizes="100vw"
+              style={{ width: "100%", height: "auto" }}
               alt="anh 1"
-              src="/anh1.jpg"
+              src="/aboutpic/anh1.webp"
+              placeholder="blur"
             />
           </section>
 
@@ -190,7 +194,7 @@ export default function AboutPage() {
               width="100%"
               height="auto"
               alt="anh dich vu"
-              src="/aboutpic/dichvu.jpg"
+              src="/aboutpic/dichvu.webp"
             />
           </section>
 
