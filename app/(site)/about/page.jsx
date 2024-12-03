@@ -193,7 +193,7 @@ export default function AboutPage() {
               width="100%"
               height="auto"
               alt="anh dich vu"
-              src="/aboutpic/dichvu.webp"
+              src="/aboutpic/1234.webp"
             />
           </section>
 
