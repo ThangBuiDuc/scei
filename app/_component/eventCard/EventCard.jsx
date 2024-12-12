@@ -68,7 +68,7 @@ const EventCard = ({ event, isVisible }) => {
           <div className="md:w-3/5 w-full h-full flex flex-col items-start justify-between md:px-4">
             <div className="w-full flex flex-col items-start px-4 pb-2 gap-3">
               <h4 className="font-bold text-large uppercase">{event.title}</h4>
-              <p className="text-base">{event.description}</p>
+              <p className="text-base line-clamp-3">{event.description}</p>
             </div>
             <div className="w-full flex justify-between items-center px-4 pt-2 gap-3">
               <Button
