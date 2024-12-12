@@ -8,14 +8,14 @@ import { getArticlesData, getEventsData } from "@/utils/funcionApi/select";
 
 export default async function HomePage() {
   const articlesRes = await getArticlesData(10, 0);
-  const eventsRes = await getEventsData(10, 0);
+  const eventsRes = await getEventsData(5, 0);
 
   const articles = articlesRes.data.result;
   const events = eventsRes.data.result;
   return (
     <div className="w-full h-full">
       <div className="w-full bg-slate-600 ">
-        <Image
+        {/* <Image
           alt="homeimg"
           src="/anhhomegiamdungluong4.webp"
           width={1920}
@@ -24,6 +24,16 @@ export default async function HomePage() {
           style={{ width: "100%", height: "auto" }}
           className="object-cover"
           priority
+        /> */}
+        <img
+          alt="homeimg"
+          src="/anhhomegiamdungluong4.webp"
+          // width={1920}
+          // height={1000}
+          // sizes="100vw"
+          style={{ width: "100%", height: "auto" }}
+          className="object-cover"
+          // priority
         />
       </div>
 
