@@ -35,7 +35,6 @@ export default async function HomePage() {
           // priority
         />
       </div>
-
       <div className="w-full h-full flex flex-col items-center bg-slate-100">
         <div className="max-w-screen-xl flex flex-col items-center py-10 px-4 md:px-0 gap-y-2 ">
           <h1 className="text-[#0083c2] font-bold text-3xl md:text-5xl text-center">
