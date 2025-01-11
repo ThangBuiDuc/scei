@@ -10,7 +10,6 @@ export const resgisContact = async (object) => {
     },
   });
 };
-
 // Đăng ký tham gia event
 export const resgisEvent = async (objects) => {
   return await axios({
@@ -46,4 +45,3 @@ export const createEvent = async (objects) => {
     },
   });
 };
-
