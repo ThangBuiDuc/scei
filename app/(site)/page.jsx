@@ -76,7 +76,7 @@ export default async function HomePage() {
             </Button>
           </div>
           <div className="w-full lg:w-1/2 h-full lg:m-5 gap-5 p-2 lg:p-0">
-            <Image
+            {/* <Image
               width={0}
               height={0}
               alt="createImage"
@@ -84,6 +84,12 @@ export default async function HomePage() {
               sizes="100vw"
               style={{ width: "100%", height: "auto" }}
               className="w-full m-auto object-cover"
+            /> */}
+            <iframe
+              loading="lazy"
+              src="https://www.youtube.com/embed/l7BD3DDLslk?autoplay=1&loop=1&playlist=l7BD3DDLslk&mute=1"
+              allowFullScreen
+              className="h-[350px] w-full"
             />
           </div>
         </div>
