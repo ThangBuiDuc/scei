@@ -94,7 +94,6 @@ export default async function HomePage() {
           </div>
         </div>
       </div>
-
       <div className="w-full h-full flex flex-col items-center">
         <div className="max-w-screen-xl w-full flex flex-col lg:flex-row items-stretch py-5 gap-2">
           <div className="w-full lg:w-2/3 flex flex-col overflow-hidden">
