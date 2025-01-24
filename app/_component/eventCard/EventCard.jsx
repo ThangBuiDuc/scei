@@ -20,7 +20,7 @@ const EventCard = ({ event, isVisible }) => {
   const hours = eventDate.getHours().toString().padStart(2, "0");
   const minutes = eventDate.getMinutes().toString().padStart(2, "0");
   const day = eventDate.getDate();
-  const month = eventDate.toLocaleString("default", { month: "short" });
+  const month = eventDate.toLocaleString("en-US", { month: "short" });
   const year = eventDate.getFullYear();
 
   const isRegistrationClosed = currentDate > registrationDeadline;
